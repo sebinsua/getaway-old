@@ -9,20 +9,19 @@
 #import "InitialViewController.h"
 
 
-@implementation InitialViewController
+@implementation InitialViewController {
 
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"browseViewController"]
-                            leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarViewController"]];
-    [self setLeftSize: 160];
-    if (self) {
-        // Add any extra init code here
-    }
-    return self;
 }
 
+- (void) viewDidLoad
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    self.initialViewDeckController = [storyboard instantiateViewControllerWithIdentifier:@"initialViewDeckController"];
+}
+
+- (IBAction)start
+{
+    [self presentViewController: self.initialViewDeckController animated:NO completion:nil];
+}
 
 @end

@@ -7,12 +7,9 @@
 
 
 #import <UIKit/UIKit.h>
-#import "InitialViewDeckController.h"
+#import "IIViewDeckController.h"
 
-@interface InitialViewController : UIViewController
 
-@property InitialViewDeckController *initialViewDeckController;
-
-- (IBAction)start;
+@interface InitialViewDeckController : IIViewDeckController
 
 @end

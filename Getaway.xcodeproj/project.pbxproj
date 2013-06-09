@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3632D415DDF9B2308CC67292 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D46C591F136A496B11EF /* InitialViewController.m */; };
+		3632D415DDF9B2308CC67292 /* InitialViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D46C591F136A496B11EF /* InitialViewDeckController.m */; };
 		3632D83B0AB1F4847E5CC238 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DA0AB5CCA97EE8A45453 /* DetailCell.m */; };
+		3632DF15A1814B2598C00912 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D0CDDBEFB5457FC2BB69 /* InitialViewController.m */; };
 		637A00841764A6180066CC32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00831764A6180066CC32 /* UIKit.framework */; };
 		637A00861764A6180066CC32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00851764A6180066CC32 /* Foundation.framework */; };
 		637A00881764A6180066CC32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00871764A6180066CC32 /* CoreGraphics.framework */; };
@@ -43,8 +44,10 @@
 /* Begin PBXFileReference section */
 		06D0C4FCC44D486498B73758 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		105091A96E394761BD408588 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		3632D46C591F136A496B11EF /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
-		3632D9B51AD158016B7216D7 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		3632D08E9D06A3837E32D3D5 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		3632D0CDDBEFB5457FC2BB69 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		3632D46C591F136A496B11EF /* InitialViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewDeckController.m; sourceTree = "<group>"; };
+		3632D9B51AD158016B7216D7 /* InitialViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewDeckController.h; sourceTree = "<group>"; };
 		3632DA0AB5CCA97EE8A45453 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
 		3632DD7C98CFEEF24038A6BA /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		637A00801764A6180066CC32 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,10 +145,12 @@
 				637A00A11764A6180066CC32 /* DetailViewController.h */,
 				637A00A21764A6180066CC32 /* DetailViewController.m */,
 				637A008A1764A6180066CC32 /* Supporting Files */,
-				3632D46C591F136A496B11EF /* InitialViewController.m */,
-				3632D9B51AD158016B7216D7 /* InitialViewController.h */,
+				3632D46C591F136A496B11EF /* InitialViewDeckController.m */,
+				3632D9B51AD158016B7216D7 /* InitialViewDeckController.h */,
 				3632DA0AB5CCA97EE8A45453 /* DetailCell.m */,
 				3632DD7C98CFEEF24038A6BA /* DetailCell.h */,
+				3632D0CDDBEFB5457FC2BB69 /* InitialViewController.m */,
+				3632D08E9D06A3837E32D3D5 /* InitialViewController.h */,
 			);
 			path = Getaway;
 			sourceTree = "<group>";
@@ -329,8 +334,9 @@
 				637A00941764A6180066CC32 /* AppDelegate.m in Sources */,
 				637A00A01764A6180066CC32 /* BrowseViewController.m in Sources */,
 				637A00A31764A6180066CC32 /* DetailViewController.m in Sources */,
-				3632D415DDF9B2308CC67292 /* InitialViewController.m in Sources */,
+				3632D415DDF9B2308CC67292 /* InitialViewDeckController.m in Sources */,
 				3632D83B0AB1F4847E5CC238 /* DetailCell.m in Sources */,
+				3632DF15A1814B2598C00912 /* InitialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
