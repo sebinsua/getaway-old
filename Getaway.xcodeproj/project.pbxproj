@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3632D415DDF9B2308CC67292 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D46C591F136A496B11EF /* InitialViewController.m */; };
 		637A00841764A6180066CC32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00831764A6180066CC32 /* UIKit.framework */; };
 		637A00861764A6180066CC32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00851764A6180066CC32 /* Foundation.framework */; };
 		637A00881764A6180066CC32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00871764A6180066CC32 /* CoreGraphics.framework */; };
@@ -17,7 +18,7 @@
 		637A00981764A6180066CC32 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A00971764A6180066CC32 /* Default@2x.png */; };
 		637A009A1764A6180066CC32 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A00991764A6180066CC32 /* Default-568h@2x.png */; };
 		637A009D1764A6180066CC32 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637A009B1764A6180066CC32 /* MainStoryboard.storyboard */; };
-		637A00A01764A6180066CC32 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A009F1764A6180066CC32 /* MasterViewController.m */; };
+		637A00A01764A6180066CC32 /* BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A009F1764A6180066CC32 /* BrowseViewController.m */; };
 		637A00A31764A6180066CC32 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A00A21764A6180066CC32 /* DetailViewController.m */; };
 		637A00AB1764A6180066CC32 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00AA1764A6180066CC32 /* SenTestingKit.framework */; };
 		637A00AC1764A6180066CC32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A00831764A6180066CC32 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		06D0C4FCC44D486498B73758 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		105091A96E394761BD408588 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		3632D46C591F136A496B11EF /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		3632D9B51AD158016B7216D7 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		637A00801764A6180066CC32 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637A00831764A6180066CC32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		637A00851764A6180066CC32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,8 +57,8 @@
 		637A00971764A6180066CC32 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		637A00991764A6180066CC32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		637A009C1764A6180066CC32 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		637A009E1764A6180066CC32 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		637A009F1764A6180066CC32 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		637A009E1764A6180066CC32 /* BrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowseViewController.h; sourceTree = "<group>"; };
+		637A009F1764A6180066CC32 /* BrowseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowseViewController.m; sourceTree = "<group>"; };
 		637A00A11764A6180066CC32 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		637A00A21764A6180066CC32 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		637A00A91764A6180066CC32 /* GetawayTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,11 +132,13 @@
 				637A00921764A6180066CC32 /* AppDelegate.h */,
 				637A00931764A6180066CC32 /* AppDelegate.m */,
 				637A009B1764A6180066CC32 /* MainStoryboard.storyboard */,
-				637A009E1764A6180066CC32 /* MasterViewController.h */,
-				637A009F1764A6180066CC32 /* MasterViewController.m */,
+				637A009E1764A6180066CC32 /* BrowseViewController.h */,
+				637A009F1764A6180066CC32 /* BrowseViewController.m */,
 				637A00A11764A6180066CC32 /* DetailViewController.h */,
 				637A00A21764A6180066CC32 /* DetailViewController.m */,
 				637A008A1764A6180066CC32 /* Supporting Files */,
+				3632D46C591F136A496B11EF /* InitialViewController.m */,
+				3632D9B51AD158016B7216D7 /* InitialViewController.h */,
 			);
 			path = Getaway;
 			sourceTree = "<group>";
@@ -317,8 +322,9 @@
 			files = (
 				637A00901764A6180066CC32 /* main.m in Sources */,
 				637A00941764A6180066CC32 /* AppDelegate.m in Sources */,
-				637A00A01764A6180066CC32 /* MasterViewController.m in Sources */,
+				637A00A01764A6180066CC32 /* BrowseViewController.m in Sources */,
 				637A00A31764A6180066CC32 /* DetailViewController.m in Sources */,
+				3632D415DDF9B2308CC67292 /* InitialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

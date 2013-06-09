@@ -1,21 +1,22 @@
 //
-//  MasterViewController.m
+//  BrowseViewController.m
 //  Getaway
 //
 //  Created by Seb Insua on 09/06/2013.
 //  Copyright (c) 2013 Getaway App Ltd. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "BrowseViewController.h"
+#import <ViewDeck/IIViewDeckController.h>
 
 #import "DetailViewController.h"
 
-@interface MasterViewController () {
+@interface BrowseViewController () {
     NSMutableArray *_objects;
 }
 @end
 
-@implementation MasterViewController
+@implementation BrowseViewController
 
 - (void)awakeFromNib
 {
@@ -26,7 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -46,6 +47,10 @@
     [_objects insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (IBAction)revealSidebar:(UIBarButtonItem *)sender {
+    [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 #pragma mark - Table View

@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  BrowseViewController.h
 //  Getaway
 //
 //  Created by Seb Insua on 09/06/2013.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
+@interface BrowseViewController : UITableViewController
 
 @end
