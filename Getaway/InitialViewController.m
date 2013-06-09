@@ -17,6 +17,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"browseViewController"]
                             leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarViewController"]];
+    [self setLeftSize: 160];
     if (self) {
         // Add any extra init code here
     }
