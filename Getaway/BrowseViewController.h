@@ -10,4 +10,6 @@
 
 @interface BrowseViewController : UITableViewController
 
+@property (strong, nonatomic) NSMutableArray *items;
+
 @end
