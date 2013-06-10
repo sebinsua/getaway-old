@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class DetailCell;
+
 @interface BrowseViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSMutableArray *holidays;
+
+- (IBAction)revealSideBar:(UIBarButtonItem *)sender;
 
 @end

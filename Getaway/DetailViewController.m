@@ -31,7 +31,7 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = @"HARDCODED TEXT";
+        self.detailDescriptionLabel.text = self.detailItem;
     }
 }
 

@@ -13,33 +13,24 @@
 #import "DetailCell.h"
 
 @implementation BrowseViewController {
-    NSMutableArray *items;
-}
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
+    NSMutableArray *holidays;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.items = [[NSMutableArray alloc] init];
-    [self.items addObject: @"HARDCODED TEXT1"];
-    [self.items addObject: @"HARDCODED TEXT2"];
-    [self.items addObject: @"HARDCODED TEXT3"];
-    [self.items addObject: @"HARDCODED TEXT4"];
-    [self.items addObject: @"HARDCODED TEXT5"];
+    NSLog(@"well?");
+    self.holidays = [[NSMutableArray alloc] init];
+    [self.holidays addObject: @"HARDCODED TEXT1"];
+    [self.holidays addObject: @"HARDCODED TEXT2"];
+    [self.holidays addObject: @"HARDCODED TEXT3"];
+    [self.holidays addObject: @"HARDCODED TEXT4"];
+    [self.holidays addObject: @"HARDCODED TEXT5"];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)revealSidebar:(UIBarButtonItem *)sender {
     [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
@@ -52,19 +43,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.items.count;
+    return self.holidays.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (DetailCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = @"detailCell";
+    NSString *cellIdentifier = @"showOverview";
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        DetailCell *cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+    // if (cell == nil) {
+    //     DetailCell *cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    //     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    // }
 
-    NSString *name = [self.items objectAtIndex: indexPath.item];
+    NSString *name = [self.holidays objectAtIndex: indexPath.item];
     UIImage *image = [UIImage imageNamed: @"holiday.png"];
     [cell.detailLabel setText: name];
     [cell.detailImage initWithImage: image];
@@ -74,9 +65,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"showOverviewSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.items[indexPath.row];
+        NSDate *object = self.holidays[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
