@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import "IIViewDeckController.h"
+#import "BrowseNavigationViewController.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -17,18 +19,39 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+
     [self configureView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController.view setAlpha: 0.6];
+    [self.viewDeckController setPanningMode: IIViewDeckNoPanning];
+    // [self.navigationController.view setAlpha: 0.6];
+
+    [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+    [self.navigationController.navigationBar setTranslucent:TRUE];
+
+    [self.navigationController.toolbar setBarTintColor:[UIColor clearColor]];
+    [self.navigationController.toolbar setTranslucent:TRUE];
+    [self.navigationController setToolbarHidden: FALSE];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.viewDeckController setPanningMode: IIViewDeckFullViewPanning];
+
+    UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
+                                         green:183/256.0f
+                                          blue:234/256.0f
+                                         alpha:1.0];
+
     [UIView animateWithDuration:0.5 animations:^(void) {
-        self.navigationController.view.alpha = 1.0;
+        // [self.navigationController.view setAlpha: 1.0];
+        [self.navigationController.navigationBar setBarTintColor: lightBlue];
+        [self.navigationController.navigationBar setTranslucent:FALSE];
+        [self.navigationController setToolbarHidden: TRUE];
+
     }];
 }
 
@@ -49,14 +72,10 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = self.detailItem;
+        self.titleLabel.text = [self.detailItem objectForKey: @"name"];
+        [self.backgroundImage initWithImage: [UIImage imageNamed: [self.detailItem objectForKey: @"image_large"]]];
+        self.descriptionLabel.text = [self.detailItem objectForKey: @"name"];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

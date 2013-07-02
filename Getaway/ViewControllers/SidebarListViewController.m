@@ -8,15 +8,17 @@
 
 #import "SidebarListViewController.h"
 #import "MenuCell.h"
+#import <ViewDeck/IIViewDeckController.h>
 
+@implementation SidebarListViewController
 
-@implementation SidebarListViewController {
-    NSMutableArray *menuItems;
-}
+@synthesize menuItems;
 
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    // The line below is in order that clicking on the centre panel does not do weird shit...
+    [self.viewDeckController setCenterhiddenInteractivity:IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose];
 
     UIColor *lightBlue = [UIColor colorWithRed:40/255.0f
                                          green:183/255.0f
@@ -29,6 +31,16 @@
     [self.menuItems addObject:@"Your Tickets"];
     [self.menuItems addObject:@"Help"];
     [self.menuItems addObject:@"Settings"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self hideSidebar];
+}
+
+- (void)hideSidebar
+{
+    [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

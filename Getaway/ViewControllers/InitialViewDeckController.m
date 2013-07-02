@@ -15,8 +15,8 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"coreViewController"]
-                            leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarViewController"]];
+    self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"browseNavigationViewController"]
+                            leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarNavigationViewController"]];
     if (self) {
         [self setLeftSize: 160];
     }

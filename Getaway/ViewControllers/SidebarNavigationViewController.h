@@ -10,4 +10,7 @@
 
 
 @interface SidebarNavigationViewController : UINavigationController
+
+- (IBAction)hideSidebar:(UIBarButtonItem *)sender;
+
 @end

@@ -1,5 +1,5 @@
 //
-//  BrowseViewController.h
+//  BrowseListViewController.h
 //  Getaway
 //
 //  Created by Seb Insua on 09/06/2013.
@@ -10,7 +10,7 @@
 
 @class DetailCell;
 
-@interface BrowseViewController : UITableViewController
+@interface BrowseListViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *holidays;
 

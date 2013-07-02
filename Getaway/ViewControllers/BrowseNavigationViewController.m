@@ -6,10 +6,10 @@
 //
 
 
-#import "CoreNavigationViewController.h"
+#import "BrowseNavigationViewController.h"
 
 
-@implementation CoreNavigationViewController {
+@implementation BrowseNavigationViewController {
 
 }
 

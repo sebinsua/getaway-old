@@ -11,7 +11,17 @@
 
 @implementation DetailCell
 
-@synthesize detailImage;
-@synthesize detailLabel;
+@synthesize backgroundImage;
+@synthesize titleLabel;
+@synthesize priceLabel;
+
+- (void)layoutSubviews
+{
+    [self.titleLabel setTextColor: [UIColor whiteColor]];
+    [self.titleLabel setFont:[UIFont systemFontOfSize: 32]];
+
+    [self.priceLabel setTextColor: [UIColor whiteColor]];
+    [self.priceLabel setFont:[UIFont systemFontOfSize: 14]];
+}
 
 @end
