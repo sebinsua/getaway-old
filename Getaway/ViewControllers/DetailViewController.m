@@ -14,6 +14,24 @@
 
 @implementation DetailViewController
 
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    [self configureView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.view setAlpha: 0.6];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [UIView animateWithDuration:0.5 animations:^(void) {
+        self.navigationController.view.alpha = 1.0;
+    }];
+}
+
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
@@ -33,13 +51,6 @@
     if (self.detailItem) {
         self.detailDescriptionLabel.text = self.detailItem;
     }
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning

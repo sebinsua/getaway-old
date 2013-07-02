@@ -20,7 +20,8 @@
 {
     [super viewDidLoad];
 
-    NSLog(@"well?");
+    // w * h: 612 * 482
+
     self.holidays = [[NSMutableArray alloc] init];
     [self.holidays addObject: @"HARDCODED TEXT1"];
     [self.holidays addObject: @"HARDCODED TEXT2"];
@@ -50,10 +51,9 @@
 {
     NSString *cellIdentifier = @"showOverview";
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    // if (cell == nil) {
-    //     DetailCell *cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    //     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    // }
+    if (cell == nil) {
+        DetailCell *cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
 
     NSString *name = [self.holidays objectAtIndex: indexPath.item];
     UIImage *image = [UIImage imageNamed: @"holiday.png"];
