@@ -25,19 +25,30 @@
             @"name": @"Paris",
             @"image_small": @"paris.png",
             @"image_large": @"paris_large.png",
-            @"price": @"£190"
+            @"price": @"£190",
+            @"description": @"Paris was, is and always will be, something rather special. To get the \"feel\" of Paris you"
+                    " will visit old Montmartre, for this is the home of the artists and street entertainers. Picturesque"
+                    " squares where the eaves of the houses almost touch and the unmistakable smell of fresh coffee and"
+                    " croissants drifts from the numerous brasseries. The Latin Quarter has an atmosphere all of its own:"
+                    " tiny cobbled streets, crammed with restaurants and bistros.\n"
+                    "\n"
+                    "There is so much to see and do, you will leave Paris with sore feet, but once having had a taste,"
+                    " you will always want to come back for more. It is everything you imagine it to be, romantic,"
+                    " inspiring, vibrant even outrageous, but best of all Paris is simply unique."
     }];
     [self.holidays addObject: @{
             @"name": @"Berlin",
             @"image_small": @"berlin.png",
             @"image_large": @"paris_large.png",
-            @"price": @"£250"
+            @"price": @"£250",
+            @"description": @""
     }];
     [self.holidays addObject: @{
             @"name": @"Amsterdam",
             @"image_small": @"amsterdam.png",
             @"image_large": @"paris_large.png",
-            @"price": @"£320"
+            @"price": @"£320",
+            @"description": @""
     }];
 }
 

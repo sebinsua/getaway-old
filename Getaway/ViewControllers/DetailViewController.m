@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 #import "IIViewDeckController.h"
-#import "BrowseNavigationViewController.h"
+#import "UIImage+StackBlur.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -26,33 +26,45 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.viewDeckController setPanningMode: IIViewDeckNoPanning];
-    // [self.navigationController.view setAlpha: 0.6];
 
-    [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
-    [self.navigationController.navigationBar setTranslucent:TRUE];
+    // [self.navigationController.navigationBar setBarStyle: UIBarStyleDefault];
+    // [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+    // [self.navigationController.navigationBar setOpaque:FALSE];
+    // [self.navigationController.navigationBar setTranslucent:TRUE];
+    [UIView animateWithDuration:0.5 animations:^(void) {
+        [self.navigationController.navigationBar setAlpha: 0.0];
 
-    [self.navigationController.toolbar setBarTintColor:[UIColor clearColor]];
-    [self.navigationController.toolbar setTranslucent:TRUE];
-    [self.navigationController setToolbarHidden: FALSE];
+        [self.navigationController setToolbarHidden: FALSE];
+        [self.navigationController.toolbar setBarTintColor:[UIColor blackColor]];
+        [self.navigationController.toolbar setOpaque:FALSE];
+        [self.navigationController.toolbar setTranslucent:TRUE];
+    }];
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.navigationController.navigationBar setHidden: TRUE];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.viewDeckController setPanningMode: IIViewDeckFullViewPanning];
 
-    UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
-                                         green:183/256.0f
-                                          blue:234/256.0f
-                                         alpha:1.0];
-
+    // [self.navigationController.navigationBar setBarTintColor: lightBlue];
+    // [self.navigationController.navigationBar setOpaque:TRUE];
+    // [self.navigationController.navigationBar setTranslucent:FALSE];
     [UIView animateWithDuration:0.5 animations:^(void) {
-        // [self.navigationController.view setAlpha: 1.0];
-        [self.navigationController.navigationBar setBarTintColor: lightBlue];
-        [self.navigationController.navigationBar setTranslucent:FALSE];
-        [self.navigationController setToolbarHidden: TRUE];
+        [self.navigationController.navigationBar setAlpha: 1.0];
+        [self.navigationController.navigationBar setHidden: FALSE];
 
+        [self.navigationController setToolbarHidden: TRUE];
     }];
+}
+
+- (IBAction) customBack: (id) sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Managing the detail item
@@ -72,9 +84,13 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.titleLabel.text = [self.detailItem objectForKey: @"name"];
-        [self.backgroundImage initWithImage: [UIImage imageNamed: [self.detailItem objectForKey: @"image_large"]]];
-        self.descriptionLabel.text = [self.detailItem objectForKey: @"name"];
+        UIImage *image = [UIImage imageNamed: [self.detailItem objectForKey: @"image_large"]];
+        UIImage *blurredImage = [image stackBlur: 15.0];
+
+        [self.titleLabel setText: [self.detailItem objectForKey: @"name"]];
+        [self.backgroundImage initWithImage: blurredImage];
+        [self.priceLabel setText: [self.detailItem objectForKey: @"price"]];
+        [self.descriptionLabel setText:[self.detailItem objectForKey: @"description"]];
     }
 }
 
