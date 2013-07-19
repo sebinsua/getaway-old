@@ -19,6 +19,7 @@
 		3632D767E8707FC899CC3AE0 /* SidebarNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DB9098FFB5CDDB619595 /* SidebarNavigationViewController.m */; };
 		3632D91764B39E3DC817FACD /* SidebarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D9E1108CBD6567085A47 /* SidebarListViewController.m */; };
 		3632D93D8BF3D1C74BAC00DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3632DE0BBA3285767E8B1D16 /* QuartzCore.framework */; };
+		3632D9C4D488CCAA146C5E81 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3632D79FC0C7E93077CE4E13 /* CoreImage.framework */; };
 		3632DC3E8D460C7EC4712F5E /* BrowseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D7B0C5D434521AC4FB09 /* BrowseNavigationViewController.m */; };
 		3632DCCF755A8E8AFA4E8837 /* InitialViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DEB846178CFC8EEFC1B8 /* InitialViewDeckController.m */; };
 		3632DCFC376A809836CFE876 /* hamburger_menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D01BF656EDC3CC79380A /* hamburger_menu_icon.png */; };
@@ -64,6 +65,7 @@
 		3632D577080650FD77487ABD /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		3632D6B1A0B87A32901568B1 /* InitialViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewDeckController.h; sourceTree = "<group>"; };
 		3632D70F2D862394E721D9F6 /* berlin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berlin.png; sourceTree = "<group>"; };
+		3632D79FC0C7E93077CE4E13 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		3632D7B0C5D434521AC4FB09 /* BrowseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseNavigationViewController.m; sourceTree = "<group>"; };
 		3632D9B1A259F348B8D0E9CA /* paris_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paris_large.png; sourceTree = "<group>"; };
 		3632D9E1108CBD6567085A47 /* SidebarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarListViewController.m; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				637A00881764A6180066CC32 /* CoreGraphics.framework in Frameworks */,
 				F1F808826C6844D69984BCEB /* libPods.a in Frameworks */,
 				3632D93D8BF3D1C74BAC00DE /* QuartzCore.framework in Frameworks */,
+				3632D9C4D488CCAA146C5E81 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +189,7 @@
 				637A00AA1764A6180066CC32 /* SenTestingKit.framework */,
 				06D0C4FCC44D486498B73758 /* libPods.a */,
 				3632DE0BBA3285767E8B1D16 /* QuartzCore.framework */,
+				3632D79FC0C7E93077CE4E13 /* CoreImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

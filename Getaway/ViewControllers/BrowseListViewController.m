@@ -3,7 +3,7 @@
 //  Getaway
 //
 //  Created by Seb Insua on 09/06/2013.
-//  Copyright (c) 2013 Getaway App Ltd. All rights reserved.
+//  Copyright (c) 2013 Momentum Labs Ltd. All rights reserved.
 //
 
 #import "BrowseListViewController.h"
@@ -110,6 +110,7 @@
     if ([[segue identifier] isEqualToString:@"showOverviewSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDictionary *object = [self.holidays objectAtIndex: indexPath.row];
+
         [[segue destinationViewController] setDetailItem: object];
     }
 }

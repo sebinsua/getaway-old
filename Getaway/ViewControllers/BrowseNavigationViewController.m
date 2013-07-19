@@ -1,6 +1,6 @@
 //
 // Created by Seb Insua on 01/07/2013.
-// Copyright (c) 2013 Getaway App Ltd. All rights reserved.
+// Copyright (c) 2013 Momentum Labs Ltd. All rights reserved.
 //
 // To change the template use AppCode | Preferences | File Templates.
 //
@@ -23,10 +23,12 @@
                                          green:148/255.0f
                                           blue:210/255.0f
                                          alpha:1.0];
+    [self.view setBackgroundColor: lightBlue];
     [self.navigationBar setBarTintColor: lightBlue];
     [self.navigationBar setTintColor: darkBlue];
     [self.navigationBar setTitleTextAttributes: @{
             UITextAttributeTextColor: [UIColor whiteColor]
     }];
+
 }
 @end

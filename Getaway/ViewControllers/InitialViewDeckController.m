@@ -1,6 +1,6 @@
 //
 // Created by Seb Insua on 09/06/2013.
-// Copyright (c) 2013 Getaway App Ltd. All rights reserved.
+// Copyright (c) 2013 Momentum Labs Ltd. All rights reserved.
 //
 // To change the template use AppCode | Preferences | File Templates.
 //
@@ -19,6 +19,8 @@
                             leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarNavigationViewController"]];
     if (self) {
         [self setLeftSize: 160];
+        // [self setOpenSlideAnimationDuration: 1.0f];
+        // [self setCloseSlideAnimationDuration: 1.0f];
     }
     return self;
 }
