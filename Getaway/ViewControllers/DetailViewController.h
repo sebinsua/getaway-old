@@ -12,7 +12,9 @@
 
 @property (strong, nonatomic) id detailItem;
 
-@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *bookButton;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollArea;
 

@@ -16,18 +16,43 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    [self.scrollArea setDelegate:self];
 
     [self configureView];
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"Unpredicatable.");
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self setupScrollMask];
+}
+
+- (void)setupScrollMask {
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.scrollArea.bounds;
+    gradient.colors = @[
+            (id) [UIColor colorWithWhite: 0 alpha: 0].CGColor,
+            (id) [UIColor colorWithWhite: 0 alpha: 1].CGColor
+    ];
+    gradient.startPoint = CGPointMake(0, 0);
+    gradient.endPoint = CGPointMake(0, 0.03f);
+    [self.scrollArea.layer setMask: gradient];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
     [self.darkenedView setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.3f]];
+    [self setupScrollMask];
+
+    UIImage *buttonImage = [UIImage imageNamed:@"button.png"];
+    UIButton *bookButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [bookButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    float toolbarWidth = self.navigationController.toolbar.bounds.size.width;
+    float toolbarHeight = self.navigationController.toolbar.bounds.size.height;
+    bookButton.frame = CGRectMake( 0, 0, toolbarWidth, toolbarHeight);
+    [bookButton setTitle:@"Book Now" forState:UIControlStateNormal];
+    [bookButton.titleLabel setFont: [UIFont boldSystemFontOfSize:18.0] ];
+    [bookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.bookButton setCustomView:bookButton];
 
     [self.backButton setAlpha: 0.8f];
     [self.titleLabel setAlpha: 0.8f];
@@ -46,6 +71,7 @@
 
     [UIView animateWithDuration:0.30f animations:^(void) {
         [self.navigationController setToolbarHidden: FALSE];
+        [self.navigationController.toolbar setAlpha: 0.8f];
 
     }];
 }
