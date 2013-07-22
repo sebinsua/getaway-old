@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) id detailItem;
 
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollArea;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UIView *darkenedView;
@@ -24,5 +26,9 @@
 
 - (IBAction) customBack:(id)sender;
 - (IBAction) book:(id)sender;
+
+- (void)configureView;
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;
 
 @end

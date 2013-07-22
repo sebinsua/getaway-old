@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
 
+    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 10, 0)];
+
     self.holidays = [[NSMutableArray alloc] init];
     [self.holidays addObject: @{
             @"name": @"Paris",

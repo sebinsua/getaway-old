@@ -10,9 +10,6 @@
 #import "IIViewDeckController.h"
 #import "UIImage+StackBlur.h"
 
-@interface DetailViewController ()
-- (void)configureView;
-@end
 
 @implementation DetailViewController
 
@@ -20,29 +17,43 @@
 {
     [super viewDidLoad];
 
+    // [self.scrollArea setDelegate:self];
     [self configureView];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    NSLog(@"Unpredicatable.");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    // CGSize size = [self.scrollArea systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    // NSLog(@"%f - %f", size.width, size.height);
+    // [self.scrollArea setTranslatesAutoresizingMaskIntoConstraints: NO];
+    [self.scrollArea setContentSize: CGSizeMake(1, 620)];
+
     [self.viewDeckController setPanningMode: IIViewDeckNoPanning];
 
-    // The background of the navigation controller is light blue so this works,
+    [self.navigationController.toolbar setBarTintColor:[UIColor blackColor]];
+    [self.navigationController.toolbar setOpaque:FALSE];
+    [self.navigationController.toolbar setTranslucent:TRUE];
+
+    // The background of the navigation controller is light blue so this works (@0.15f),
     // it's nasty that we're having to do this so fast but the problem is that the animation isn't a constant speed
     // and I do not know how to sync with it. Key frames?
     [UIView animateWithDuration:0.15f animations:^(void) {
-        CGFloat old_x = self.navigationController.navigationBar.layer.position.x;
-        CGFloat old_y = self.navigationController.navigationBar.layer.position.y;
-        NSLog(@"scrolling in - old_x: %f, old_y: %f", old_x, old_y);
-        [self.navigationController.navigationBar.layer setPosition:CGPointMake(-old_x, old_y)];
+        // CGFloat old_x = self.navigationController.navigationBar.layer.position.x;
+        // CGFloat old_y = self.navigationController.navigationBar.layer.position.y;
+        // NSLog(@"scrolling in - old_x: %f, old_y: %f", old_x, old_y);
+        // [self.navigationController.navigationBar.layer setPosition:CGPointMake(-old_x, old_y)];
+        [self.navigationController.navigationBar setAlpha: 0.0f];
     }];
 
     [UIView animateWithDuration:0.30f animations:^(void) {
         // [self.navigationController.navigationBar setAlpha: 0.0];
         [self.navigationController setToolbarHidden: FALSE];
-        [self.navigationController.toolbar setBarTintColor:[UIColor blackColor]];
-        [self.navigationController.toolbar setOpaque:FALSE];
-        [self.navigationController.toolbar setTranslucent:TRUE];
+
     }];
 }
 
@@ -57,10 +68,11 @@
     [self.viewDeckController setPanningMode: IIViewDeckFullViewPanning];
 
     [UIView animateWithDuration:0.15f animations:^(void) {
-        CGFloat old_x = self.navigationController.navigationBar.layer.position.x;
-        CGFloat old_y = self.navigationController.navigationBar.layer.position.y;
-        NSLog(@"scrolling out - old_x: %f, old_y: %f", old_x, old_y);
-        [self.navigationController.navigationBar.layer setPosition:CGPointMake(-old_x, old_y)];
+        // CGFloat old_x = self.navigationController.navigationBar.layer.position.x;
+        // CGFloat old_y = self.navigationController.navigationBar.layer.position.y;
+        // NSLog(@"scrolling out - old_x: %f, old_y: %f", old_x, old_y);
+        // [self.navigationController.navigationBar.layer setPosition:CGPointMake(-old_x, old_y)];
+        [self.navigationController.navigationBar setAlpha: 1.0f];
     }];
 
     [UIView animateWithDuration:0.30f animations:^(void) {
@@ -86,12 +98,25 @@
         _detailItem = newDetailItem;
         
         // Update the view.
-        [self configureView];
+        // [self configureView];
     }
 }
 
 - (void)configureView
 {
+    //[self.scrollArea setContentSize:CGSizeMake(3000, 3000)];
+    // self.scrollArea.translatesAutoresizingMaskIntoConstraints = YES;
+    // NSLog(@"fw: %f", self.scrollArea.frame.size.width);
+    // NSLog(@"fh: %f", self.scrollArea.frame.size.height);
+    // NSLog(@"cw: %f", self.scrollArea.contentSize.width);
+    // NSLog(@"ch: %f", self.scrollArea.contentSize.height);
+
+    // NSLog(@"%d", self.scrollArea.userInteractionEnabled);
+    // NSLog(@"%d", self.scrollArea.scrollEnabled);
+    //self.scrollArea.delegate = self;
+
+    // [self.scrollArea setScrollEnabled: TRUE];
+    // [self.scrollArea setClipsToBounds: TRUE];
     [self.darkenedView setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.3f]];
 
     [self.backButton setAlpha: 0.8f];
@@ -134,6 +159,9 @@
 
         [self.foregroundImage setOpaque:true];
     }
+
+    // NSLog(@"cw: %f", self.scrollArea.contentSize.width);
+    // NSLog(@"ch: %f", self.scrollArea.contentSize.height);
 }
 
 @end

@@ -293,7 +293,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Getaway App Ltd.";
+				ORGANIZATIONNAME = "Momentum Labs Ltd.";
 			};
 			buildConfigurationList = 637A007B1764A6170066CC32 /* Build configuration list for PBXProject "Getaway" */;
 			compatibilityVersion = "Xcode 3.2";
