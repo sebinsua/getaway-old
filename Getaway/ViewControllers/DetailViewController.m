@@ -92,11 +92,12 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        UIImage *image = [UIImage imageNamed: [self.detailItem objectForKey: @"image_large"]];
-        UIImage *blurredImage = [image stackBlur: 20.0];
+        UIImage *backgroundImage = [UIImage imageNamed: [self.detailItem objectForKey: @"image_large"]];
+        UIImage *foregroundImage = [UIImage imageNamed: [self.detailItem objectForKey: @"image_small"]];
+        UIImage *blurredBackgroundImage = [backgroundImage stackBlur: 20.0];
 
-        [self.backgroundImage initWithImage: blurredImage];
-        [self.foregroundImage initWithImage: image];
+        [self.backgroundImage initWithImage: blurredBackgroundImage];
+        [self.foregroundImage initWithImage: foregroundImage];
 
         [self.titleLabel setText: [self.detailItem objectForKey: @"name"]];
         [self.priceLabel setText: [self.detailItem objectForKey: @"price"]];
@@ -104,12 +105,13 @@
         [self.description setText: description];
 
         float width = self.description.bounds.size.width;
-        CGSize descriptionSize = [description sizeWithFont: [UIFont systemFontOfSize: 14.0] constrainedToSize:CGSizeMake(width, 1000) lineBreakMode: UILineBreakModeTailTruncation];
+        CGSize descriptionSize = [description sizeWithFont: [UIFont systemFontOfSize: 14.0] constrainedToSize:CGSizeMake(width, 2500) lineBreakMode: UILineBreakModeWordWrap];
         // @todo: In order to make this work I needed to switch off auto-layout. That's bad.
-        float height = 100 + descriptionSize.height + self.titleLabel.bounds.size.height + self.foregroundImage.bounds.size.height;
         CGRect descriptionFrame = self.description.frame;
-        descriptionFrame.size.height = descriptionSize.height;
+        descriptionFrame.size.height = descriptionSize.height + 300;
         [self.description setFrame: descriptionFrame];
+
+        float height = 250 + descriptionSize.height + self.titleLabel.bounds.size.height + self.foregroundImage.bounds.size.height;
         [self.scrollArea setContentSize: CGSizeMake(1, height)];
     }
 

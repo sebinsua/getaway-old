@@ -25,9 +25,11 @@
                                          green:148/255.0f
                                           blue:210/255.0f
                                          alpha:1.0];
+    UIColor* lightGrey = [UIColor colorWithWhite: 0.90 alpha:1];
+    UIColor* white = [UIColor whiteColor];
 
     UIView *selectedView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    [selectedView setBackgroundColor:darkBlue];
+    [selectedView setBackgroundColor: darkBlue];
 
     [self setSelectedBackgroundView: selectedView];
     [self setBackgroundColor: lightBlue];
