@@ -8,6 +8,7 @@
 
 #import "SidebarListViewController.h"
 #import "MenuCell.h"
+#import "YourGetawayViewController.h"
 #import <ViewDeck/IIViewDeckController.h>
 
 @implementation SidebarListViewController
@@ -26,15 +27,37 @@
                                          alpha:1.0];
     [self.tableView setBackgroundColor: lightBlue];
 
-    self.menuItems = [[NSMutableArray alloc] init];
-    [self.menuItems addObject:@"Getaways"];
-    [self.menuItems addObject:@"Your Tickets"];
-    [self.menuItems addObject:@"Help"];
-    [self.menuItems addObject:@"Settings"];
+    self.currentCentreViewControllerName = @"browseNavigationViewController";
+    self.menuItems = @[
+        @{
+            @"name": @"Getaways",
+            @"viewController": @"browseNavigationViewController"
+        },
+        @{
+            @"name": @"Your Tickets",
+            @"viewController": @"yourGetawayViewController"
+        },
+        @{
+            @"name": @"Help",
+            @"viewController": @"browseNavigationViewController"
+        },
+        @{
+            @"name": @"Settings",
+            @"viewController": @"browseNavigationViewController"
+        }
+    ];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *object = (NSDictionary *) [self.menuItems objectAtIndex: indexPath.item];
+    NSString *viewControllerName = [object valueForKey: @"viewController"];
+
+    if (![self.currentCentreViewControllerName isEqualToString: viewControllerName]) {
+        self.currentCentreViewControllerName = viewControllerName;
+        self.viewDeckController.centerController = [self.storyboard instantiateViewControllerWithIdentifier: viewControllerName];
+    }
+
     [self hideSidebar];
 }
 
@@ -61,7 +84,8 @@
         MenuCell *cell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    NSString *name = [self.menuItems objectAtIndex: indexPath.item];
+    NSDictionary *object = (NSDictionary *) [self.menuItems objectAtIndex: indexPath.item];
+    NSString *name = [object valueForKey: @"name"];
     cell.textLabel.text = name;
 
     return cell;

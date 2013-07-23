@@ -17,6 +17,14 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     self.initialViewDeckController = [storyboard instantiateViewControllerWithIdentifier:@"initialViewDeckController"];
+
+    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"intro_background.png"] ];
+    
+    self.loginButton.buttonColor = [UIColor colorFromHexCode: (NSString *) @"#3B5998"];
+    self.loginButton.shadowColor = [UIColor colorFromHexCode: (NSString *) @"#263A66"];
+    self.loginButton.shadowHeight = 3.0f;
+    self.loginButton.cornerRadius = 6.0f;
+
 }
 
 - (IBAction)start

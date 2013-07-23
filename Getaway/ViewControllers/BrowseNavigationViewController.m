@@ -13,7 +13,7 @@
 
 }
 
-- (void) viewDidLoad
+- (void)viewDidLoad
 {
     UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
                                   green:183/256.0f
@@ -27,8 +27,9 @@
     [self.navigationBar setBarTintColor: lightBlue];
     [self.navigationBar setTintColor: darkBlue];
     [self.navigationBar setTitleTextAttributes: @{
-            UITextAttributeTextColor: [UIColor whiteColor]
+            NSForegroundColorAttributeName: [UIColor whiteColor]
     }];
 
 }
+
 @end

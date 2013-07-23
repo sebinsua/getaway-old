@@ -63,8 +63,8 @@
 
 - (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
-    UINavigationController *navigationController = self.viewDeckController.leftController;
-    UITableViewController *tableViewController = navigationController.topViewController;
+    UINavigationController *navigationController = (UINavigationController *) self.viewDeckController.leftController;
+    UITableViewController *tableViewController = (UITableViewController *) navigationController.topViewController;
 
     // Select the first item, when the view first loads.
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];

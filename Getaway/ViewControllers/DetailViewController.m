@@ -51,7 +51,7 @@
     bookButton.frame = CGRectMake( 0, 0, toolbarWidth, toolbarHeight);
     [bookButton setTitle:@"Book Now" forState:UIControlStateNormal];
     [bookButton.titleLabel setFont: [UIFont boldSystemFontOfSize:18.0] ];
-    [bookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [bookButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     [self.bookButton setCustomView:bookButton];
 
     [self.backButton setAlpha: 0.8f];
@@ -71,7 +71,7 @@
 
     [UIView animateWithDuration:0.30f animations:^(void) {
         [self.navigationController setToolbarHidden: FALSE];
-        [self.navigationController.toolbar setAlpha: 0.8f];
+        [self.navigationController.toolbar setAlpha: 0.85f];
 
     }];
 }

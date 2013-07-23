@@ -29,4 +29,7 @@
     [self.toolbar setTintColor:[UIColor whiteColor]];
 }
 
+- (IBAction)hideSidebar:(UIBarButtonItem *)sender
+{}
+
 @end

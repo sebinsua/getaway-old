@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "InitialViewDeckController.h"
 
+#import "FlatUIKit.h"
+
 @interface InitialViewController : UIViewController
+
+
+@property IBOutlet FUIButton *loginButton;
 
 @property InitialViewDeckController *initialViewDeckController;
 

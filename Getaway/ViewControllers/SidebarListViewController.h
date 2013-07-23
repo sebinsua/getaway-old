@@ -11,6 +11,8 @@
 
 @interface SidebarListViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *menuItems;
+@property (strong, nonatomic) NSArray *menuItems;
+
+@property (strong, nonatomic) NSString *currentCentreViewControllerName;
 
 @end

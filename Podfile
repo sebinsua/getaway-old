@@ -1,6 +1,7 @@
-platform :ios
+platform :ios, '6.0'
 xcodeproj './Getaway.xcodeproj'
 pod 'ViewDeck', '~> 2.2.11'
 pod 'iCarousel', '~> 1.7.4'
-pod 'Facebook-iOS-SDK', '~> 3.5.1'
+pod 'Facebook-iOS-SDK', '~> 3.5.3'
 pod 'StackBluriOS', '~> 0.0.1'
+pod 'FlatUIKit'
