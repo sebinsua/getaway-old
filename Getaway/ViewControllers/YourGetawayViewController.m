@@ -7,9 +7,16 @@
 
 
 #import "YourGetawayViewController.h"
+#import "IIViewDeckController.h"
 
 
 @implementation YourGetawayViewController {
 
 }
+
+- (IBAction)revealSidebar:(UIBarButtonItem *)sender
+{
+    [self.viewDeckController toggleLeftViewAnimated:YES];
+}
+
 @end

@@ -114,6 +114,44 @@
             </objects>
             <point key="canvasLocation" x="459" y="-657"/>
         </scene>
+        <!--Your Getaway Navigation View Controller-->
+        <scene sceneID="1g0-bs-H7G">
+            <objects>
+                <navigationController storyboardIdentifier="yourGetawayViewController" definesPresentationContext="YES" id="LEj-J3-8If" customClass="YourGetawayNavigationViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VJ3-L2-TLt">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cBh-B9-MwY" kind="relationship" relationship="rootViewController" id="vaR-Qg-3g3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ff-u4-XxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="-658"/>
+        </scene>
+        <!--Your Getaway View Controller-->
+        <scene sceneID="jG4-mM-Boi">
+            <objects>
+                <viewController id="cBh-B9-MwY" customClass="YourGetawayViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7jZ-rf-JEf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="kpD-x5-6u5">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger_menu_icon.png" id="ln5-iH-hqw">
+                            <connections>
+                                <action selector="revealSidebar:" destination="cBh-B9-MwY" id="zTJ-1x-05h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1o-D0-pgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-658"/>
+        </scene>
         <!--Sidebar Navigation View Controller-->
         <scene sceneID="8k3-N2-7wX">
             <objects>
@@ -319,52 +357,96 @@
             </objects>
             <point key="canvasLocation" x="886" y="14"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="2z5-vN-U0m">
-            <objects>
-                <navigationController storyboardIdentifier="yourGetawayViewController" definesPresentationContext="YES" id="u3o-bV-0NX" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lCR-he-yQG">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Rd5-Mo-C1p" kind="push" id="Yna-fd-SKr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ox8-rb-PAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="933" y="-657"/>
-        </scene>
-        <!--Your Getaway View Controller-->
-        <scene sceneID="JZv-mS-xdk">
-            <objects>
-                <viewController id="Rd5-Mo-C1p" customClass="YourGetawayViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yzd-Kf-02f">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeahhhhhh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kN6-my-XXS">
-                                <rect key="frame" x="69" y="222" width="82" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="Oed-D7-4Ld"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o6U-eM-xt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1399" y="-657"/>
-        </scene>
     </scenes>
     <resources>
         <image name="amsterdam.png" width="183.60000610351562" height="144.60000610351562"/>
         <image name="hamburger_menu_icon.png" width="40" height="40"/>
         <image name="logo.png" width="265" height="110"/>
     </resources>
+    <classes>
+        <class className="BrowseListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BrowseListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSideBar:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="revealSidebar:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="BrowseNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BrowseNavigationViewController.h"/>
+        </class>
+        <class className="DetailCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="book:"/>
+                <relationship kind="action" name="customBack:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bookButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="darkenedView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="foregroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollArea" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FUIButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
+        </class>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
+            </relationships>
+        </class>
+        <class className="InitialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="start"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="FUIButton"/>
+            </relationships>
+        </class>
+        <class className="InitialViewDeckController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialViewDeckController.h"/>
+        </class>
+        <class className="MenuCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuCell.h"/>
+        </class>
+        <class className="SidebarListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SidebarListViewController.h"/>
+        </class>
+        <class className="SidebarNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SidebarNavigationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hideSidebar:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="YourGetawayNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourGetawayNavigationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="YourGetawayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourGetawayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
