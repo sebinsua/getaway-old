@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SidebarListViewController : UITableViewController
+@interface SidebarListViewController : UITableViewController <UINavigationControllerDelegate>
 
 @property (strong, nonatomic) NSArray *menuItems;
 

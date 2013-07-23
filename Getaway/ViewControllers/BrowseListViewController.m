@@ -63,14 +63,7 @@
 
 - (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
-    UINavigationController *navigationController = (UINavigationController *) self.viewDeckController.leftController;
-    UITableViewController *tableViewController = (UITableViewController *) navigationController.topViewController;
-
-    // Select the first item, when the view first loads.
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-
     [self.viewDeckController toggleLeftViewAnimated:YES];
-    [tableViewController.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionBottom];
 }
 
 #pragma mark - Table View
@@ -90,10 +83,10 @@
     NSString *cellIdentifier = @"showOverview";
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        DetailCell *cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    NSDictionary *holiday = [self.holidays objectAtIndex: indexPath.item];
+    NSDictionary *holiday = [self.holidays objectAtIndex: (NSUInteger) indexPath.item];
     if (holiday != nil) {
         NSString *name = [holiday objectForKey: @"name"];
         NSString *price = [holiday objectForKey: @"price"];
@@ -116,7 +109,7 @@
 
     if ([[segue identifier] isEqualToString:@"showOverviewSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDictionary *object = [self.holidays objectAtIndex: indexPath.row];
+        NSDictionary *object = [self.holidays objectAtIndex: (NSUInteger) indexPath.row];
 
         [[segue destinationViewController] setDetailItem: object];
     }

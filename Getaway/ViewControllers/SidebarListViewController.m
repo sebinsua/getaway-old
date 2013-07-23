@@ -8,7 +8,6 @@
 
 #import "SidebarListViewController.h"
 #import "MenuCell.h"
-#import "YourGetawayViewController.h"
 #import <ViewDeck/IIViewDeckController.h>
 
 @implementation SidebarListViewController
@@ -18,6 +17,8 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setDelegate: self];
+
     // The line below is in order that clicking on the centre panel does not do weird shit...
     [self.viewDeckController setCenterhiddenInteractivity:IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose];
 
@@ -48,9 +49,24 @@
     ];
 }
 
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    // Select the first item, when the view first loads.
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
+    for (int i = 0; i < [self.menuItems count]; i++) {
+        NSDictionary *menuItem = [self.menuItems objectAtIndex: (NSUInteger) i];
+        if ([[menuItem valueForKey:@"viewController"] isEqualToString:self.currentCentreViewControllerName]) {
+            indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+            break;
+        }
+    }
+
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionBottom];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *object = (NSDictionary *) [self.menuItems objectAtIndex: indexPath.item];
+    NSDictionary *object = (NSDictionary *) [self.menuItems objectAtIndex: (NSUInteger) indexPath.item];
     NSString *viewControllerName = [object valueForKey: @"viewController"];
 
     if (![self.currentCentreViewControllerName isEqualToString: viewControllerName]) {
@@ -81,7 +97,7 @@
     NSString *cellIdentifier = @"showMenuScreen";
     MenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        MenuCell *cell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
     NSDictionary *object = (NSDictionary *) [self.menuItems objectAtIndex: indexPath.item];
