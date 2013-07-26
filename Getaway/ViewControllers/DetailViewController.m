@@ -40,7 +40,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.darkenedView setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.3f]];
     [self setupScrollMask];
 
     UIImage *buttonImage = [UIImage imageNamed:@"button.png"];
@@ -123,6 +122,12 @@
         UIImage *blurredBackgroundImage = [backgroundImage stackBlur: 20.0];
 
         [self.backgroundImage initWithImage: blurredBackgroundImage];
+        CALayer *darkenLayer = [CALayer layer];
+        darkenLayer.frame = self.backgroundImage.bounds;
+        darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:1].CGColor;
+        darkenLayer.opacity = 0.5f;
+        [self.backgroundImage.layer addSublayer: darkenLayer];
+
         [self.foregroundImage initWithImage: foregroundImage];
 
         [self.titleLabel setText: [self.detailItem objectForKey: @"name"]];

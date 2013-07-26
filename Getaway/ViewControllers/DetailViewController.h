@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollArea;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
-@property (weak, nonatomic) IBOutlet UIView *darkenedView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *foregroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
