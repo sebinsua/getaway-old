@@ -104,7 +104,12 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="bHD-vj-k9v"/>
-                        <barButtonItem title="Logout" id="xou-rv-4Fp"/>
+                        <barButtonItem title="Logout" id="xou-rv-4Fp">
+                            <connections>
+                                <action selector="logout" destination="e42-8U-mQZ" id="EHL-Wj-iMb"/>
+                                <segue destination="Z42-sx-mCQ" kind="modal" identifier="logout" modalTransitionStyle="coverVertical" id="VcD-OL-78o"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ng2-Md-Q0U"/>
                         <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="ZR7-pG-FCJ"/>
                     </toolbarItems>
@@ -114,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="459" y="-657"/>
         </scene>
-        <!--Your Getaway Navigation View Controller-->
+        <!--Your Tickets Navigation View Controller-->
         <scene sceneID="1g0-bs-H7G">
             <objects>
-                <navigationController storyboardIdentifier="yourGetawayViewController" definesPresentationContext="YES" id="LEj-J3-8If" customClass="YourGetawayNavigationViewController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="yourTicketsViewController" definesPresentationContext="YES" id="LEj-J3-8If" customClass="YourTicketsNavigationViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VJ3-L2-TLt">
                         <autoresizingMask key="autoresizingMask"/>
@@ -130,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="927" y="-658"/>
         </scene>
-        <!--Your Getaway View Controller-->
+        <!--Your Tickets View Controller-->
         <scene sceneID="jG4-mM-Boi">
             <objects>
-                <viewController id="cBh-B9-MwY" customClass="YourGetawayViewController" sceneMemberID="viewController">
+                <viewController id="cBh-B9-MwY" customClass="YourTicketsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7jZ-rf-JEf">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -427,6 +432,9 @@
         </class>
         <class className="SidebarListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SidebarListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logout"/>
+            </relationships>
         </class>
         <class className="SidebarNavigationViewController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SidebarNavigationViewController.h"/>
@@ -434,14 +442,11 @@
                 <relationship kind="action" name="hideSidebar:" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
-        <class className="YourGetawayNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourGetawayNavigationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealSidebar:" candidateClass="UIBarButtonItem"/>
-            </relationships>
+        <class className="YourTicketsNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourTicketsNavigationViewController.h"/>
         </class>
-        <class className="YourGetawayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourGetawayViewController.h"/>
+        <class className="YourTicketsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourTicketsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="revealSidebar:" candidateClass="UIBarButtonItem"/>
             </relationships>

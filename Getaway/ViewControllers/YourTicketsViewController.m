@@ -6,11 +6,11 @@
 //
 
 
-#import "YourGetawayViewController.h"
+#import "YourTicketsViewController.h"
 #import "IIViewDeckController.h"
 
 
-@implementation YourGetawayViewController {
+@implementation YourTicketsViewController {
 
 }
 

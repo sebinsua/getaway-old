@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface YourGetawayNavigationViewController : UINavigationController
+@interface YourTicketsViewController : UIViewController
+
+- (IBAction)revealSidebar:(UIBarButtonItem *)sender;
 
 @end

@@ -29,7 +29,8 @@
 
 - (IBAction)start
 {
-    [self presentViewController: self.initialViewDeckController animated:NO completion:nil];
+    [self.initialViewDeckController setModalTransitionStyle: UIModalTransitionStyleCrossDissolve];
+    [self presentViewController: self.initialViewDeckController animated:YES completion:nil];
 }
 
 @end

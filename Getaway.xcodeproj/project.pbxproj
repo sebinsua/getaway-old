@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3632D00C569039103D90E793 /* YourGetawayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D095E35D01FACFE9F984 /* YourGetawayViewController.m */; };
+		3632D00C569039103D90E793 /* YourTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D095E35D01FACFE9F984 /* YourTicketsViewController.m */; };
 		3632D0471A85E7C7C3D5139B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DCE46679AE76D6452125 /* DetailViewController.m */; };
 		3632D08990556C8F4C60DA39 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D575265D81FCA23F47FE /* logo.png */; };
 		3632D270B58351BA8B92DB72 /* paris_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D9B1A259F348B8D0E9CA /* paris_large.png */; };
@@ -31,7 +31,7 @@
 		3632DC64591B5AC16C2CF03F /* amsterdam_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632DFD78ED8CCF2DA86BC28 /* amsterdam_large.png */; };
 		3632DCCF755A8E8AFA4E8837 /* InitialViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DEB846178CFC8EEFC1B8 /* InitialViewDeckController.m */; };
 		3632DCFC376A809836CFE876 /* hamburger_menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D01BF656EDC3CC79380A /* hamburger_menu_icon.png */; };
-		3632DD5CC6854D8A247BA7FB /* YourGetawayNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D4A5ACFCEBED0B25CFFF /* YourGetawayNavigationViewController.m */; };
+		3632DD5CC6854D8A247BA7FB /* YourTicketsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D4A5ACFCEBED0B25CFFF /* YourTicketsNavigationViewController.m */; };
 		632908DE179EE70F009F4CB5 /* icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 632908DD179EE70F009F4CB5 /* icon_120.png */; };
 		632908E0179EE715009F4CB5 /* icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 632908DF179EE715009F4CB5 /* icon_114.png */; };
 		632908E2179EE71A009F4CB5 /* icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 632908E1179EE71A009F4CB5 /* icon_58.png */; };
@@ -71,8 +71,8 @@
 		105091A96E394761BD408588 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		3632D01BF656EDC3CC79380A /* hamburger_menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_menu_icon.png; sourceTree = "<group>"; };
 		3632D036AAC78CEE8489E753 /* BrowseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseListViewController.h; sourceTree = "<group>"; };
-		3632D095E35D01FACFE9F984 /* YourGetawayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourGetawayViewController.m; sourceTree = "<group>"; };
-		3632D0983D5889D7864F0544 /* YourGetawayNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourGetawayNavigationViewController.h; sourceTree = "<group>"; };
+		3632D095E35D01FACFE9F984 /* YourTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourTicketsViewController.m; sourceTree = "<group>"; };
+		3632D0983D5889D7864F0544 /* YourTicketsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourTicketsNavigationViewController.h; sourceTree = "<group>"; };
 		3632D176281F8224B7825D3C /* paris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paris.png; sourceTree = "<group>"; };
 		3632D19F999B8967AB610214 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		3632D2B4A18710D560091C6D /* intro_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro_background.png; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 		3632D2F8EC9A0D053BB0BEB2 /* amsterdam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amsterdam.png; sourceTree = "<group>"; };
 		3632D3F804E771CAD9D83F05 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
 		3632D471DB0E096BA3AE272F /* BrowseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseListViewController.m; sourceTree = "<group>"; };
-		3632D4A5ACFCEBED0B25CFFF /* YourGetawayNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourGetawayNavigationViewController.m; sourceTree = "<group>"; };
-		3632D50B38843A7EE2441412 /* YourGetawayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourGetawayViewController.h; sourceTree = "<group>"; };
+		3632D4A5ACFCEBED0B25CFFF /* YourTicketsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourTicketsNavigationViewController.m; sourceTree = "<group>"; };
+		3632D50B38843A7EE2441412 /* YourTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourTicketsViewController.h; sourceTree = "<group>"; };
 		3632D5652194C1F3B1E9548F /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		3632D575265D81FCA23F47FE /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3632D577080650FD77487ABD /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -188,10 +188,10 @@
 				3632DCA46BF95FB68354571D /* SidebarNavigationViewController.h */,
 				3632DCE46679AE76D6452125 /* DetailViewController.m */,
 				3632DC0121D512F99675AD54 /* InitialViewController.h */,
-				3632D4A5ACFCEBED0B25CFFF /* YourGetawayNavigationViewController.m */,
-				3632D0983D5889D7864F0544 /* YourGetawayNavigationViewController.h */,
-				3632D095E35D01FACFE9F984 /* YourGetawayViewController.m */,
-				3632D50B38843A7EE2441412 /* YourGetawayViewController.h */,
+				3632D4A5ACFCEBED0B25CFFF /* YourTicketsNavigationViewController.m */,
+				3632D0983D5889D7864F0544 /* YourTicketsNavigationViewController.h */,
+				3632D095E35D01FACFE9F984 /* YourTicketsViewController.m */,
+				3632D50B38843A7EE2441412 /* YourTicketsViewController.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -463,8 +463,8 @@
 				3632D0471A85E7C7C3D5139B /* DetailViewController.m in Sources */,
 				3632D43B51ABE90DBA2D457D /* DetailCell.m in Sources */,
 				3632D4B1684F275635E6698B /* MenuCell.m in Sources */,
-				3632DD5CC6854D8A247BA7FB /* YourGetawayNavigationViewController.m in Sources */,
-				3632D00C569039103D90E793 /* YourGetawayViewController.m in Sources */,
+				3632DD5CC6854D8A247BA7FB /* YourTicketsNavigationViewController.m in Sources */,
+				3632D00C569039103D90E793 /* YourTicketsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,6 +96,18 @@
         [cell.titleLabel setText:name];
         [cell.priceLabel setText: price];
         [cell.backgroundImage initWithImage:image];
+
+        CAGradientLayer *gradient = [CAGradientLayer layer];
+        gradient.frame = cell.backgroundImage.bounds;
+        gradient.colors = @[
+                (id) [UIColor colorWithWhite: 0 alpha: 0].CGColor,
+                (id) [UIColor colorWithWhite: 0 alpha: 1].CGColor
+        ];
+
+        // The last 40 percent of the image is darkened. :)
+        gradient.startPoint = CGPointMake(0, 0.6f);
+        gradient.endPoint = CGPointMake(0, 1.0f);
+        [cell.backgroundImage.layer addSublayer: gradient];
     }
 
     return cell;
@@ -113,6 +125,7 @@
 
         [[segue destinationViewController] setDetailItem: object];
     }
+    // @todo: Add a segue to Your Getaway which gets called only in certain cases. :)
 }
 
 @end

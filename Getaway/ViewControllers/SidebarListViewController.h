@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) NSString *currentCentreViewControllerName;
 
+- (IBAction) logout;
+
 @end

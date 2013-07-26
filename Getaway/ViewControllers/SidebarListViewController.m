@@ -36,7 +36,7 @@
         },
         @{
             @"name": @"Your Tickets",
-            @"viewController": @"yourGetawayViewController"
+            @"viewController": @"yourTicketsViewController"
         },
         @{
             @"name": @"Help",
@@ -47,6 +47,14 @@
             @"viewController": @"browseNavigationViewController"
         }
     ];
+}
+
+- (IBAction) logout
+{
+    //UIViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"initialViewController"];
+    // [[UIApplication sharedApplication].delegate.window setRootViewController: initialViewController];
+
+    [self performSegueWithIdentifier:@"logout" sender:self];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated

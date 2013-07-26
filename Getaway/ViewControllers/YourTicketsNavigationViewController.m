@@ -6,10 +6,10 @@
 //
 
 
-#import "YourGetawayNavigationViewController.h"
+#import "YourTicketsNavigationViewController.h"
 
 
-@implementation YourGetawayNavigationViewController {
+@implementation YourTicketsNavigationViewController {
 
 }
 
