@@ -12,6 +12,7 @@
 #import "DetailViewController.h"
 #import "DetailCell.h"
 #import "UIColor+FlatUI.h"
+#import "PullRefreshTableViewController.h"
 
 @implementation BrowseListViewController
 
@@ -20,7 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.refreshHeaderHeight = 40.0f;
+    [self addPullToRefreshHeader];
     [self.refreshArrow initWithImage: [UIImage imageNamed: @"empty.png"]];
     [self.refreshLabel setFont: [UIFont systemFontOfSize: 12.0]];
     [self.refreshLabel setTextColor: [UIColor colorFromHexCode: @"#c1c1c1"]];
