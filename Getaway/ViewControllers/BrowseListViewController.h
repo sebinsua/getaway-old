@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PullRefreshTableViewController.h"
 
 @class DetailCell;
 
-@interface BrowseListViewController : UITableViewController
+@interface BrowseListViewController : PullRefreshTableViewController
 
 @property (strong, nonatomic) NSMutableArray *holidays;
 
 - (IBAction)revealSideBar:(UIBarButtonItem *)sender;
+
+- (IBAction)love:(UIButton *)sender;
 
 @end

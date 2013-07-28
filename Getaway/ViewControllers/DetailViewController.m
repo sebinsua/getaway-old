@@ -48,7 +48,7 @@
     float toolbarWidth = self.navigationController.toolbar.bounds.size.width;
     float toolbarHeight = self.navigationController.toolbar.bounds.size.height;
     bookButton.frame = CGRectMake( 0, 0, toolbarWidth, toolbarHeight);
-    [bookButton setTitle:@"Book Now" forState:UIControlStateNormal];
+    [bookButton setTitle:@"Lets getaway!" forState:UIControlStateNormal];
     [bookButton.titleLabel setFont: [UIFont boldSystemFontOfSize:18.0] ];
     [bookButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     [self.bookButton setCustomView:bookButton];
@@ -124,8 +124,7 @@
         [self.backgroundImage initWithImage: blurredBackgroundImage];
         CALayer *darkenLayer = [CALayer layer];
         darkenLayer.frame = self.backgroundImage.bounds;
-        darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:1].CGColor;
-        darkenLayer.opacity = 0.5f;
+        darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3f].CGColor;
         [self.backgroundImage.layer addSublayer: darkenLayer];
 
         [self.foregroundImage initWithImage: foregroundImage];

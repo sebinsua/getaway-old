@@ -11,6 +11,7 @@
 
 #import "DetailViewController.h"
 #import "DetailCell.h"
+#import "UIColor+FlatUI.h"
 
 @implementation BrowseListViewController
 
@@ -19,6 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.refreshArrow initWithImage: [UIImage imageNamed: @"empty.png"]];
+    [self.refreshLabel setFont: [UIFont systemFontOfSize: 12.0]];
+    [self.refreshLabel setTextColor: [UIColor colorFromHexCode: @"#c1c1c1"]];
 
     [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 10, 0)];
 
@@ -64,6 +69,18 @@
 - (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
     [self.viewDeckController toggleLeftViewAnimated:YES];
+}
+
+-(IBAction)love:(UIButton *)sender
+{
+    if ([sender.accessibilityIdentifier isEqualToString: @"heartOn"]) {
+        [sender setImage: [UIImage imageNamed: @"heart_off.png"] forState:UIControlStateNormal];
+        [sender setAccessibilityIdentifier: @"heartOff"];
+    } else {
+        [sender setImage: [UIImage imageNamed: @"heart_on.png"] forState:UIControlStateNormal];
+        [sender setAccessibilityIdentifier: @"heartOn"];
+    }
+    
 }
 
 #pragma mark - Table View
