@@ -14,6 +14,8 @@
 @interface InitialViewController : UIViewController
 
 
+@property IBOutlet UIImageView *background;
+@property IBOutlet UIImageView *logo;
 @property IBOutlet FUIButton *loginButton;
 
 @property InitialViewDeckController *initialViewDeckController;

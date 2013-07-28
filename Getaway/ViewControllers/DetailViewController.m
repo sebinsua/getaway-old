@@ -123,7 +123,7 @@
 
         [self.backgroundImage initWithImage: blurredBackgroundImage];
         CALayer *darkenLayer = [CALayer layer];
-        darkenLayer.frame = self.backgroundImage.bounds;
+        darkenLayer.frame = self.backgroundImage.frame;
         darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3f].CGColor;
         [self.backgroundImage.layer addSublayer: darkenLayer];
 
