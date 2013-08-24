@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 #import "IIViewDeckController.h"
-#import "UIImage+StackBlur.h"
+#import "GPUImage.h"
 
 
 @implementation DetailViewController
@@ -70,8 +70,7 @@
 
     [UIView animateWithDuration:0.30f animations:^(void) {
         [self.navigationController setToolbarHidden: FALSE];
-        [self.navigationController.toolbar setAlpha: 0.85f];
-
+        [self.navigationController.toolbar setAlpha: 0.70f];
     }];
 }
 
@@ -89,6 +88,7 @@
     }];
 
     [UIView animateWithDuration:0.30f animations:^(void) {
+        [self.navigationController.toolbar setAlpha: 0.0f];
         [self.navigationController setToolbarHidden: TRUE];
     }];
 }
@@ -119,12 +119,24 @@
     if (self.detailItem) {
         UIImage *backgroundImage = [UIImage imageNamed: [self.detailItem objectForKey: @"image_large"]];
         UIImage *foregroundImage = [UIImage imageNamed: [self.detailItem objectForKey: @"image_small"]];
-        UIImage *blurredBackgroundImage = [backgroundImage stackBlur: 20.0];
+
+
+        // UIImage *blurredBackgroundImage = [blurFilter imageByFilteringImage: backgroundImage];
+
+        GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage: backgroundImage];
+        GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
+
+        [stillImageSource addTarget: blurFilter];
+        [stillImageSource processImage];
+
+        UIImage *blurredBackgroundImage = [blurFilter imageFromCurrentlyProcessedOutput];
+
+       //  UIImage *blurredBackgroundImage = backgroundImage; // [backgroundImage stackBlur: 20.0];
 
         [self.backgroundImage initWithImage: blurredBackgroundImage];
         CALayer *darkenLayer = [CALayer layer];
         darkenLayer.frame = self.backgroundImage.frame;
-        darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3f].CGColor;
+        darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6f].CGColor;
         [self.backgroundImage.layer addSublayer: darkenLayer];
 
         [self.foregroundImage initWithImage: foregroundImage];
@@ -135,7 +147,7 @@
         [self.description setText: description];
 
         float width = self.description.bounds.size.width;
-        CGSize descriptionSize = [description sizeWithFont: [UIFont systemFontOfSize: 14.0] constrainedToSize:CGSizeMake(width, 2500) lineBreakMode: UILineBreakModeWordWrap];
+        CGSize descriptionSize = [description sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize:CGSizeMake(width, 2500) lineBreakMode: UILineBreakModeWordWrap];
         // @todo: In order to make this work I needed to switch off auto-layout. That's bad.
         CGRect descriptionFrame = self.description.frame;
         descriptionFrame.size.height = descriptionSize.height + 300;
