@@ -189,10 +189,10 @@
         CGSize descriptionSize = [description sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize:CGSizeMake(width, 2500) lineBreakMode: UILineBreakModeWordWrap];
         // @todo: In order to make this work I needed to switch off auto-layout. That's bad.
         CGRect descriptionFrame = self.description.frame;
-        descriptionFrame.size.height = descriptionSize.height + 100;
+        descriptionFrame.size.height = descriptionSize.height + 500;
         [self.description setFrame: descriptionFrame];
 
-        float height = 250 + descriptionSize.height + self.titleLabel.bounds.size.height;
+        float height = 200 + descriptionSize.height + self.titleLabel.bounds.size.height;
         [self.scrollArea setContentSize: CGSizeMake(1, height)];
     }
 
