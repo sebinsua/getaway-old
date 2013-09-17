@@ -116,15 +116,18 @@
         [cell.priceLabel setText: price];
         [cell.backgroundImage initWithImage:image];
 
+        // [cell.loveButton setImage: [UIImage imageNamed: @"heart_off.png"] forState:UIControlStateNormal];
+        // cell.loveButton.imageView.frame = CGRectMake(0, 0, 22, 22) ;
+
         CAGradientLayer *gradient = [CAGradientLayer layer];
         gradient.frame = cell.backgroundImage.bounds;
         gradient.colors = @[
                 (id) [UIColor colorWithWhite: 0 alpha: 0].CGColor,
-                (id) [UIColor colorWithWhite: 0 alpha: 1].CGColor
+                (id) [UIColor colorWithWhite: 0 alpha: 0.5].CGColor
         ];
 
-        // The last 40 percent of the image is darkened. :)
-        gradient.startPoint = CGPointMake(0, 0.6f);
+        // The last 50 percent of the image is darkened. :)
+        gradient.startPoint = CGPointMake(0, 0.5f);
         gradient.endPoint = CGPointMake(0, 1.0f);
         [cell.backgroundImage.layer addSublayer: gradient];
     }

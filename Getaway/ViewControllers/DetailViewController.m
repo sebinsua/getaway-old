@@ -8,7 +8,6 @@
 
 #import "DetailViewController.h"
 #import "IIViewDeckController.h"
-#import "GPUImage.h"
 
 
 @implementation DetailViewController
@@ -23,6 +22,35 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self setupScrollMask];
+}
+
+- (void)handleSwipe:(UISwipeGestureRecognizer *)gesture
+{
+    NSLog(@"This should get printed. At the very least.");
+
+    CGRect frame = self.blurredView.frame;
+    // self.blurredView.clipsToBounds = FALSE;
+
+    // [self.blurredView setDynamic: TRUE];
+    // I don't know how far you want to move the grid view.
+    // This moves it off screen.
+    // Adjust this to move it the appropriate amount for your desired UI
+
+    if (gesture.direction == UISwipeGestureRecognizerDirectionRight && frame.origin.x == -320) {
+        NSLog(@"Right");
+        frame.origin.x += self.view.bounds.size.width;
+        NSLog(@"%f", frame.origin.x);
+    }
+    else if (gesture.direction == UISwipeGestureRecognizerDirectionLeft && frame.origin.x == 0) {
+        NSLog(@"Left");
+        frame.origin.x -= self.view.bounds.size.width;
+        NSLog(@"%f", frame.origin.x);
+    }
+
+    // Now animate the changing of the frame
+    [UIView animateWithDuration:0.4 animations: ^{
+        self.blurredView.frame = frame;
+    }];
 }
 
 - (void)setupScrollMask {
@@ -53,7 +81,6 @@
     [bookButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     [self.bookButton setCustomView:bookButton];
 
-    [self.backButton setAlpha: 0.8f];
     [self.titleLabel setAlpha: 0.8f];
     [self.priceLabel setAlpha: 0.8f];
     [self.description setAlpha: 0.8f];
@@ -64,13 +91,31 @@
     [self.navigationController.toolbar setOpaque:FALSE];
     [self.navigationController.toolbar setTranslucent:TRUE];
 
+    [self.blurredView setUserInteractionEnabled: YES];
+    [self.blurredView setBlurRadius: 30.0f];
+    [self.blurredView setTintColor: [UIColor clearColor]];
+
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    swipeLeft.direction = (UISwipeGestureRecognizerDirectionLeft);
+
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    swipeRight.direction = (UISwipeGestureRecognizerDirectionRight);
+
+    [self.view addGestureRecognizer:swipeLeft];
+    [self.view addGestureRecognizer:swipeRight];
+
     [UIView animateWithDuration:0.15f animations:^(void) {
-        [self.navigationController.navigationBar setAlpha: 0.0f];
+        [self.navigationController.navigationBar setTranslucent: TRUE];
+        [self.navigationController.navigationBar setBackgroundImage: [[UIImage alloc] init] forBarMetrics: UIBarMetricsDefault];
+        [self.navigationController.navigationBar setShadowImage: [[UIImage alloc] init]];
+        [self.navigationController.navigationBar setBackgroundColor: [UIColor clearColor]];
+        [self.navigationController.navigationBar setBarTintColor: [UIColor clearColor]];
+        [self.navigationController.navigationBar setTintColor:[[UIColor alloc] initWithWhite:1.0f alpha:0.8f]];
     }];
 
     [UIView animateWithDuration:0.30f animations:^(void) {
         [self.navigationController setToolbarHidden: FALSE];
-        [self.navigationController.toolbar setAlpha: 0.70f];
+        [self.navigationController.toolbar setAlpha: 1.0f];
     }];
 }
 
@@ -84,18 +129,31 @@
     [self.viewDeckController setPanningMode: IIViewDeckFullViewPanning];
 
     [UIView animateWithDuration:0.15f animations:^(void) {
-        [self.navigationController.navigationBar setAlpha: 1.0f];
+        [self.navigationController.toolbar setAlpha: 0.0f];
+        [self.navigationController setToolbarHidden: TRUE];
+
+        UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
+                                             green:183/256.0f
+                                              blue:234/256.0f
+                                             alpha:1.0];
+        UIColor *darkBlue = [UIColor colorWithRed:33/255.0f
+                                            green:148/255.0f
+                                             blue:210/255.0f
+                                            alpha:1.0];
+        [self.navigationController.navigationBar setTranslucent: FALSE];
+        [self.navigationController.view setBackgroundColor: lightBlue];
+        [self.navigationController.navigationBar setBackgroundImage: nil forBarMetrics: UIBarMetricsDefault];
+        [self.navigationController.navigationBar setBarTintColor: lightBlue];
+        [self.navigationController.navigationBar setBackgroundColor: lightBlue];
+        [self.navigationController.navigationBar setTintColor: darkBlue];
+        [self.navigationController.navigationBar setTitleTextAttributes: @{
+                NSForegroundColorAttributeName: [UIColor whiteColor]
+        }];
     }];
 
     [UIView animateWithDuration:0.30f animations:^(void) {
-        [self.navigationController.toolbar setAlpha: 0.0f];
-        [self.navigationController setToolbarHidden: TRUE];
-    }];
-}
 
-- (IBAction) customBack: (id) sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 - (IBAction) book: (id)sender
@@ -118,28 +176,12 @@
 
     if (self.detailItem) {
         UIImage *backgroundImage = [UIImage imageNamed: [self.detailItem objectForKey: @"image_large"]];
-        UIImage *foregroundImage = [UIImage imageNamed: [self.detailItem objectForKey: @"image_small"]];
 
-
-        // UIImage *blurredBackgroundImage = [blurFilter imageByFilteringImage: backgroundImage];
-
-        GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage: backgroundImage];
-        GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
-
-        [stillImageSource addTarget: blurFilter];
-        [stillImageSource processImage];
-
-        UIImage *blurredBackgroundImage = [blurFilter imageFromCurrentlyProcessedOutput];
-
-       //  UIImage *blurredBackgroundImage = backgroundImage; // [backgroundImage stackBlur: 20.0];
-
-        [self.backgroundImage initWithImage: blurredBackgroundImage];
+        [self.backgroundImage initWithImage: backgroundImage];
         CALayer *darkenLayer = [CALayer layer];
         darkenLayer.frame = self.backgroundImage.frame;
-        darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6f].CGColor;
+        darkenLayer.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4f].CGColor;
         [self.backgroundImage.layer addSublayer: darkenLayer];
-
-        [self.foregroundImage initWithImage: foregroundImage];
 
         [self.titleLabel setText: [self.detailItem objectForKey: @"name"]];
         [self.priceLabel setText: [self.detailItem objectForKey: @"price"]];
@@ -153,7 +195,7 @@
         descriptionFrame.size.height = descriptionSize.height + 300;
         [self.description setFrame: descriptionFrame];
 
-        float height = 250 + descriptionSize.height + self.titleLabel.bounds.size.height + self.foregroundImage.bounds.size.height;
+        float height = 250 + descriptionSize.height + self.titleLabel.bounds.size.height;
         [self.scrollArea setContentSize: CGSizeMake(1, height)];
     }
 

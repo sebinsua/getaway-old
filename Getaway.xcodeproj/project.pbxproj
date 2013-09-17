@@ -10,6 +10,7 @@
 		3632D00C569039103D90E793 /* YourTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D095E35D01FACFE9F984 /* YourTicketsViewController.m */; };
 		3632D0471A85E7C7C3D5139B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DCE46679AE76D6452125 /* DetailViewController.m */; };
 		3632D08990556C8F4C60DA39 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D575265D81FCA23F47FE /* logo.png */; };
+		3632D1859EB9FB164A118653 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3632D78FA2C1FEE68BDBE0DC /* Accelerate.framework */; };
 		3632D270B58351BA8B92DB72 /* paris_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D9B1A259F348B8D0E9CA /* paris_large.png */; };
 		3632D293E4C0B0BE5F4D8D86 /* paris.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D176281F8224B7825D3C /* paris.png */; };
 		3632D2FA04C4E89E2E5349A9 /* berlin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D70F2D862394E721D9F6 /* berlin.png */; };
@@ -90,6 +91,7 @@
 		3632D577080650FD77487ABD /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		3632D6B1A0B87A32901568B1 /* InitialViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewDeckController.h; sourceTree = "<group>"; };
 		3632D70F2D862394E721D9F6 /* berlin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berlin.png; sourceTree = "<group>"; };
+		3632D78FA2C1FEE68BDBE0DC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		3632D79FC0C7E93077CE4E13 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		3632D7B0C5D434521AC4FB09 /* BrowseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseNavigationViewController.m; sourceTree = "<group>"; };
 		3632D7B5432C7775AF8CCA0A /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				F1F808826C6844D69984BCEB /* libPods.a in Frameworks */,
 				3632D93D8BF3D1C74BAC00DE /* QuartzCore.framework in Frameworks */,
 				3632D9C4D488CCAA146C5E81 /* CoreImage.framework in Frameworks */,
+				3632D1859EB9FB164A118653 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +236,7 @@
 				06D0C4FCC44D486498B73758 /* libPods.a */,
 				3632DE0BBA3285767E8B1D16 /* QuartzCore.framework */,
 				3632D79FC0C7E93077CE4E13 /* CoreImage.framework */,
+				3632D78FA2C1FEE68BDBE0DC /* Accelerate.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -15,6 +15,8 @@
 
 - (void)viewDidLoad
 {
+    [self setNeedsStatusBarAppearanceUpdate];
+
     UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
                                   green:183/256.0f
                                    blue:234/256.0f
@@ -29,7 +31,6 @@
     [self.navigationBar setTitleTextAttributes: @{
             NSForegroundColorAttributeName: [UIColor whiteColor]
     }];
-
 }
 
 @end
