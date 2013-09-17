@@ -13,6 +13,10 @@
 
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad
 {
     [self setNeedsStatusBarAppearanceUpdate];

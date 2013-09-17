@@ -115,7 +115,7 @@
 
     [UIView animateWithDuration:0.30f animations:^(void) {
         [self.navigationController setToolbarHidden: FALSE];
-        [self.navigationController.toolbar setAlpha: 1.0f];
+        [self.navigationController.toolbar setAlpha: 0.8f];
     }];
 }
 
@@ -150,10 +150,6 @@
                 NSForegroundColorAttributeName: [UIColor whiteColor]
         }];
     }];
-
-    [UIView animateWithDuration:0.30f animations:^(void) {
-
-    }];
 }
 
 - (IBAction) book: (id)sender
@@ -185,6 +181,7 @@
 
         [self.titleLabel setText: [self.detailItem objectForKey: @"name"]];
         [self.priceLabel setText: [self.detailItem objectForKey: @"price"]];
+
         NSString *description = [self.detailItem objectForKey: @"description"];
         [self.description setText: description];
 
@@ -192,7 +189,7 @@
         CGSize descriptionSize = [description sizeWithFont: [UIFont systemFontOfSize: 16.0] constrainedToSize:CGSizeMake(width, 2500) lineBreakMode: UILineBreakModeWordWrap];
         // @todo: In order to make this work I needed to switch off auto-layout. That's bad.
         CGRect descriptionFrame = self.description.frame;
-        descriptionFrame.size.height = descriptionSize.height + 300;
+        descriptionFrame.size.height = descriptionSize.height + 100;
         [self.description setFrame: descriptionFrame];
 
         float height = 250 + descriptionSize.height + self.titleLabel.bounds.size.height;
