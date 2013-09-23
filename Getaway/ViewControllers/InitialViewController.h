@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "InitialViewDeckController.h"
+#import "AnimatedDarkenBackgroundView.h"
 
 #import "FlatUIKit.h"
 
 @interface InitialViewController : UIViewController
 
+@property IBOutlet AnimatedDarkenBackgroundView *background;
 
-@property IBOutlet UIImageView *background;
 @property IBOutlet UIImageView *logo;
 @property IBOutlet FUIButton *loginButton;
 
