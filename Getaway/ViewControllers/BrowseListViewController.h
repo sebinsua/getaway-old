@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "PullRefreshTableViewController.h"
 
 @class DetailCell;

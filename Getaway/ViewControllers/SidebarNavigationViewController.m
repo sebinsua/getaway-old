@@ -15,21 +15,24 @@
 
 - (void) viewDidLoad
 {
+    [self configureView];
+}
+
+- (void)configureView
+{
     UIColor *darkBlue = [UIColor colorWithRed:33/255.0f
-                                    green:148/255.0f
-                                     blue:210/255.0f
-                                    alpha:1.0];
+                                        green:148/255.0f
+                                         blue:210/255.0f
+                                        alpha:1.0];
     UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
                                          green:183/256.0f
                                           blue:234/256.0f
                                          alpha:1.0];
+    UIColor *white = [UIColor whiteColor];
 
-    [self.navigationBar setBarTintColor: lightBlue]; //Red as an example.
+    [self.navigationBar setBarTintColor: lightBlue];
     [self.toolbar setBarTintColor: lightBlue];
-    [self.toolbar setTintColor:[UIColor whiteColor]];
+    [self.toolbar setTintColor: white];
 }
-
-- (IBAction)hideSidebar:(UIBarButtonItem *)sender
-{}
 
 @end

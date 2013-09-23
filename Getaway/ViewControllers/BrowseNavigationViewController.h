@@ -10,4 +10,6 @@
 
 @interface BrowseNavigationViewController : UINavigationController
 
+- (void)configureView;
+
 @end
