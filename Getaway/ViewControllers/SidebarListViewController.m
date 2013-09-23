@@ -14,9 +14,41 @@
 
 @synthesize menuItems;
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.currentCentreViewControllerName = @"browseNavigationViewController";
+        self.menuItems = @[
+            @{
+                @"name": @"Getaways",
+                @"viewController": @"browseNavigationViewController"
+            },
+            @{
+                @"name": @"Your Tickets",
+                @"viewController": @"yourTicketsViewController"
+            },
+            @{
+                @"name": @"Help",
+                @"viewController": @"browseNavigationViewController"
+            },
+            @{
+                @"name": @"Settings",
+                @"viewController": @"browseNavigationViewController"
+            }
+        ];
+    }
+
+    return self;
+}
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    [self configureView];
+}
+
+- (void)configureView
+{
     [self.navigationController setDelegate: self];
 
     // The line below is in order that clicking on the centre panel does not do weird shit...
@@ -27,40 +59,14 @@
                                           blue:234/255.0f
                                          alpha:1.0];
     [self.tableView setBackgroundColor: lightBlue];
-
-    self.currentCentreViewControllerName = @"browseNavigationViewController";
-    self.menuItems = @[
-        @{
-            @"name": @"Getaways",
-            @"viewController": @"browseNavigationViewController"
-        },
-        @{
-            @"name": @"Your Tickets",
-            @"viewController": @"yourTicketsViewController"
-        },
-        @{
-            @"name": @"Help",
-            @"viewController": @"browseNavigationViewController"
-        },
-        @{
-            @"name": @"Settings",
-            @"viewController": @"browseNavigationViewController"
-        }
-    ];
-}
-
-- (IBAction) logout
-{
-    //UIViewController *initialViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"initialViewController"];
-    // [[UIApplication sharedApplication].delegate.window setRootViewController: initialViewController];
-
-    [self performSegueWithIdentifier:@"logout" sender:self];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     // Select the first item, when the view first loads.
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
+
+    // Or one of these...
     for (int i = 0; i < [self.menuItems count]; i++) {
         NSDictionary *menuItem = [self.menuItems objectAtIndex: (NSUInteger) i];
         if ([[menuItem valueForKey:@"viewController"] isEqualToString:self.currentCentreViewControllerName]) {
@@ -83,11 +89,6 @@
     }
 
     [self hideSidebar];
-}
-
-- (void)hideSidebar
-{
-    [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -113,6 +114,16 @@
     cell.textLabel.text = name;
 
     return cell;
+}
+
+- (void)hideSidebar
+{
+    [self.viewDeckController toggleLeftViewAnimated:YES];
+}
+
+- (IBAction) logout
+{
+    [self performSegueWithIdentifier:@"logout" sender:self];
 }
 
 @end

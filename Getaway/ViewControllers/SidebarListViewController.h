@@ -12,9 +12,11 @@
 @interface SidebarListViewController : UITableViewController <UINavigationControllerDelegate>
 
 @property (strong, nonatomic) NSArray *menuItems;
-
 @property (strong, nonatomic) NSString *currentCentreViewControllerName;
 
+- (void)configureView;
+
+- (void)hideSidebar;
 - (IBAction) logout;
 
 @end
