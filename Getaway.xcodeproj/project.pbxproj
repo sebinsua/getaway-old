@@ -35,6 +35,7 @@
 		3632DC64591B5AC16C2CF03F /* amsterdam_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632DFD78ED8CCF2DA86BC28 /* amsterdam_large.png */; };
 		3632DCCF755A8E8AFA4E8837 /* InitialViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DEB846178CFC8EEFC1B8 /* InitialViewDeckController.m */; };
 		3632DCFC376A809836CFE876 /* hamburger_menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D01BF656EDC3CC79380A /* hamburger_menu_icon.png */; };
+		3632DD063A999A2050F61F10 /* BookButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DC23A4F9B6323563322C /* BookButton.m */; };
 		3632DD5CC6854D8A247BA7FB /* YourTicketsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D4A5ACFCEBED0B25CFFF /* YourTicketsNavigationViewController.m */; };
 		3632DDFAC34E532F1A0A15CB /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632DBE79912F51A97B6489D /* empty.png */; };
 		632908DE179EE70F009F4CB5 /* icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 632908DD179EE70F009F4CB5 /* icon_120.png */; };
@@ -76,6 +77,7 @@
 		105091A96E394761BD408588 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		3632D01BF656EDC3CC79380A /* hamburger_menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_menu_icon.png; sourceTree = "<group>"; };
 		3632D036AAC78CEE8489E753 /* BrowseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseListViewController.h; sourceTree = "<group>"; };
+		3632D07DA4CF2F08D8BA1151 /* BookButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookButton.h; sourceTree = "<group>"; };
 		3632D095E35D01FACFE9F984 /* YourTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourTicketsViewController.m; sourceTree = "<group>"; };
 		3632D0983D5889D7864F0544 /* YourTicketsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourTicketsNavigationViewController.h; sourceTree = "<group>"; };
 		3632D176281F8224B7825D3C /* paris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paris.png; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		3632DBE79912F51A97B6489D /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		3632DBEBF039C86BE3D350F5 /* heart_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_on.png; sourceTree = "<group>"; };
 		3632DC0121D512F99675AD54 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		3632DC23A4F9B6323563322C /* BookButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookButton.m; sourceTree = "<group>"; };
 		3632DC4B639F839C7D258322 /* AnimatedDarkenBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedDarkenBackgroundView.h; sourceTree = "<group>"; };
 		3632DCA46BF95FB68354571D /* SidebarNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarNavigationViewController.h; sourceTree = "<group>"; };
 		3632DCBAD6C8D2BA4BDC8D9D /* BrowseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseNavigationViewController.h; sourceTree = "<group>"; };
@@ -179,6 +182,15 @@
 				3632DC4B639F839C7D258322 /* AnimatedDarkenBackgroundView.h */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3632D17A8D70D217ACB317EF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3632DC23A4F9B6323563322C /* BookButton.m */,
+				3632D07DA4CF2F08D8BA1151 /* BookButton.h */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		3632D2D40ADFB45165607B4D /* TableCells */ = {
@@ -263,6 +275,7 @@
 				3632D302078F58E127623E00 /* ViewControllers */,
 				3632D2D40ADFB45165607B4D /* TableCells */,
 				3632D0990E9A2A3D13B3CD74 /* Views */,
+				3632D17A8D70D217ACB317EF /* Buttons */,
 			);
 			path = Getaway;
 			sourceTree = "<group>";
@@ -495,6 +508,7 @@
 				3632DD5CC6854D8A247BA7FB /* YourTicketsNavigationViewController.m in Sources */,
 				3632D00C569039103D90E793 /* YourTicketsViewController.m in Sources */,
 				3632D65CAADF40DF86BBE64B /* AnimatedDarkenBackgroundView.m in Sources */,
+				3632DD063A999A2050F61F10 /* BookButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

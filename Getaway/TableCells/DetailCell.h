@@ -17,4 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *loveButton;
 
+- (void)setBackground:imageName;
+
 @end

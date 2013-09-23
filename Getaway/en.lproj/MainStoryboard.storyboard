@@ -337,7 +337,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem width="20" style="plain" systemItem="flexibleSpace" id="YNI-8R-nAu"/>
-                        <barButtonItem title="Book Now" width="640" style="done" id="ZU2-Bt-cl7">
+                        <barButtonItem title="Book Now" width="640" style="done" id="ZU2-Bt-cl7" customClass="BookButton">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                         <barButtonItem width="20" style="plain" systemItem="flexibleSpace" id="NUl-xN-UOd"/>

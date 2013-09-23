@@ -7,16 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ViewDeck/IIViewDeckController.h>
+#import "UIColor+FlatUI.h"
 #import "PullRefreshTableViewController.h"
 
-@class DetailCell;
+#import "DetailCell.h"
+#import "DetailViewController.h"
 
 @interface BrowseListViewController : PullRefreshTableViewController
 
 @property (strong, nonatomic) NSMutableArray *holidays;
 
-- (IBAction)revealSideBar:(UIBarButtonItem *)sender;
+- (void)configureView;
+- (void)loadHolidays;
+- (void)segueToHolidayWithSegue:(UIStoryboardSegue *)segue;
 
+- (IBAction)revealSidebar:(UIBarButtonItem *)sender;
 - (IBAction)love:(UIButton *)sender;
 
 @end

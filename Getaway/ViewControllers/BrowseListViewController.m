@@ -7,29 +7,44 @@
 //
 
 #import "BrowseListViewController.h"
-#import <ViewDeck/IIViewDeckController.h>
-
-#import "DetailViewController.h"
-#import "DetailCell.h"
-#import "UIColor+FlatUI.h"
-#import "PullRefreshTableViewController.h"
 
 @implementation BrowseListViewController
 
 @synthesize holidays;
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.holidays = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self configurePullToRefresh];
+    [self configureView];
+    [self loadHolidays];
+}
+
+- (void)configureView
+{
+    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 10, 0)];
+}
+
+- (void)configurePullToRefresh
+{
     self.refreshHeaderHeight = 40.0f;
     [self addPullToRefreshHeader];
     [self.refreshArrow initWithImage: [UIImage imageNamed: @"empty.png"]];
     [self.refreshLabel setFont: [UIFont systemFontOfSize: 12.0]];
     [self.refreshLabel setTextColor: [UIColor colorFromHexCode: @"#c1c1c1"]];
+}
 
-    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 10, 0)];
-
-    self.holidays = [[NSMutableArray alloc] init];
+- (void)loadHolidays
+{
     [self.holidays addObject: @{
             @"name": @"Paris",
             @"image_small": @"paris.png",
@@ -108,28 +123,13 @@
     NSDictionary *holiday = [self.holidays objectAtIndex: (NSUInteger) indexPath.item];
     if (holiday != nil) {
         NSString *name = [holiday objectForKey: @"name"];
-        NSString *price = [holiday objectForKey: @"price"];
-        NSString *imageName = [holiday objectForKey: @"image_small"];
-
-        UIImage *image = [UIImage imageNamed: imageName];
         [cell.titleLabel setText:name];
+
+        NSString *price = [holiday objectForKey: @"price"];
         [cell.priceLabel setText: price];
-        [cell.backgroundImage initWithImage:image];
 
-        // [cell.loveButton setImage: [UIImage imageNamed: @"heart_off.png"] forState:UIControlStateNormal];
-        // cell.loveButton.imageView.frame = CGRectMake(0, 0, 22, 22) ;
-
-        CAGradientLayer *gradient = [CAGradientLayer layer];
-        gradient.frame = cell.backgroundImage.bounds;
-        gradient.colors = @[
-                (id) [UIColor colorWithWhite: 0 alpha: 0].CGColor,
-                (id) [UIColor colorWithWhite: 0 alpha: 0.5].CGColor
-        ];
-
-        // The last 50 percent of the image is darkened. :)
-        gradient.startPoint = CGPointMake(0, 0.5f);
-        gradient.endPoint = CGPointMake(0, 1.0f);
-        [cell.backgroundImage.layer addSublayer: gradient];
+        NSString *imageName = [holiday objectForKey: @"image_small"];
+        [cell setBackground:imageName];
     }
 
     return cell;
@@ -137,17 +137,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // Always make sure that the sidebar is not open.
     if ([self.viewDeckController isSideOpen:IIViewDeckLeftSide]) {
         [self.viewDeckController toggleLeftViewAnimated:YES];
     }
 
     if ([[segue identifier] isEqualToString:@"showOverviewSegue"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDictionary *object = [self.holidays objectAtIndex: (NSUInteger) indexPath.row];
-
-        [[segue destinationViewController] setDetailItem: object];
+        [self segueToHolidayWithSegue:segue];
     }
-    // @todo: Add a segue to Your Getaway which gets called only in certain cases. :)
+}
+
+- (void)segueToHolidayWithSegue:(UIStoryboardSegue *)segue
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSDictionary *object = [self.holidays objectAtIndex: (NSUInteger) indexPath.row];
+    [[segue destinationViewController] setDetailItem: object];
 }
 
 @end
