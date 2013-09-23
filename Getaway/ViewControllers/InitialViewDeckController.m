@@ -19,8 +19,6 @@
                             leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarNavigationViewController"]];
     if (self) {
         [self setLeftSize: 160];
-        // [self setOpenSlideAnimationDuration: 1.0f];
-        // [self setCloseSlideAnimationDuration: 1.0f];
     }
     return self;
 }
