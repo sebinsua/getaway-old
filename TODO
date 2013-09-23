@@ -1,0 +1,6 @@
+** Unbreak the sliding left on the detail page.
+* Make the blur a smaller area of the image.
+** Change the button to have a less corny bit of text upon it.
+* Get the blurring to be realtime.
+* Change the sliding to be only while your finger is held down.
+** Place multiple images in the scroller. Views even... :)
