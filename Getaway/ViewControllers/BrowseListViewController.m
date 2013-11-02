@@ -85,7 +85,7 @@
 
 - (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
-    [self.viewDeckController toggleLeftViewAnimated:YES];
+    // [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 -(IBAction)love:(UIButton *)sender
@@ -138,9 +138,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Always make sure that the sidebar is not open.
-    if ([self.viewDeckController isSideOpen:IIViewDeckLeftSide]) {
-        [self.viewDeckController toggleLeftViewAnimated:YES];
-    }
+    // if ([self.viewDeckController isSideOpen:IIViewDeckLeftSide]) {
+    //     [self.viewDeckController toggleLeftViewAnimated:YES];
+    // }
 
     if ([[segue identifier] isEqualToString:@"showOverviewSegue"]) {
         [self segueToHolidayWithSegue:segue];

@@ -4,3 +4,15 @@
 * Get the blurring to be realtime.
 * Change the sliding to be only while your finger is held down.
 ** Place multiple images in the scroller. Views even... :)
+
+* constraints: create stackoverflow post: autolayout with uiscrollview is fucked.
+[2.]* Work out background image of the detail image view - fake it for now to give a pretty border to the images.
+[3.]* custom navigation bars: what can be done? Otherwise keep it fake.
+  add in the tiny dots, as well as the love icon.
+* scroll left/right on uitableitems - carousel images?
+[5.]* Add in the ability to book through the detail view controller.
+[6.]* Add in the checkout page.
+[1. EASYISH] * Add in the your getaway page to just one of the uitableitems. Manually to begin with!
+[4.] * Drag left to move the content view to the side, while unblurring and undarkening the image with stackblur.
+  Doing so again scrolls through images - going backwards does what you expect.
+* Begin to use RestKit.

@@ -6,8 +6,8 @@
 //
 
 
-#import "InitialViewDeckController.h"
 
+#import "InitialViewDeckController.h"
 
 @implementation InitialViewDeckController
 
@@ -16,10 +16,10 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"browseNavigationViewController"]
-                            leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarNavigationViewController"]];
-    if (self) {
-        [self setLeftSize: 160];
-    }
+                            leftDrawerViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarNavigationViewController"]];
+    // if (self) {
+    //     [self setLeftSize: 160];
+    // }
     return self;
 }
 

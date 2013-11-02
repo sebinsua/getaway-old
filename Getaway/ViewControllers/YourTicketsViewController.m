@@ -7,7 +7,7 @@
 
 
 #import "YourTicketsViewController.h"
-#import "IIViewDeckController.h"
+// #import "IIViewDeckController.h"
 
 
 @implementation YourTicketsViewController {
@@ -16,7 +16,7 @@
 
 - (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
-    [self.viewDeckController toggleLeftViewAnimated:YES];
+    // [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 @end

@@ -14,7 +14,7 @@
 {
     [super viewDidLoad];
 
-    [self.viewDeckController setPanningMode: IIViewDeckNoPanning];
+    // [self.viewDeckController setPanningMode: IIViewDeckNoPanning];
     [self configureView];
 
     [self layoutForDetailItem];
@@ -77,7 +77,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.viewDeckController setPanningMode: IIViewDeckFullViewPanning];
+    // [self.viewDeckController setPanningMode: IIViewDeckFullViewPanning];
 
     UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
                                          green:183/256.0f

@@ -7,9 +7,8 @@
 
 
 #import <UIKit/UIKit.h>
-#import "IIViewDeckController.h"
+#import "MMDrawerController.h";
 
-
-@interface InitialViewDeckController : IIViewDeckController
+@interface InitialViewDeckController : MMDrawerController
 
 @end
