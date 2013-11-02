@@ -20,7 +20,7 @@
         UIImage *buttonImage = [UIImage imageNamed:@"button.png"];
         UIButton *bookButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [bookButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-        [bookButton setTitle:@"Lets getaway!" forState:UIControlStateNormal];
+        [bookButton setTitle:@"Book" forState:UIControlStateNormal];
         [bookButton.titleLabel setFont: [UIFont boldSystemFontOfSize:18.0] ];
         [bookButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
         [self setCustomView:bookButton];

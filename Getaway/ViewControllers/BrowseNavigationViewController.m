@@ -38,6 +38,10 @@
     [self.navigationBar setTitleTextAttributes: @{
             NSForegroundColorAttributeName: white
     }];
+
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{

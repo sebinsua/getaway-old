@@ -17,9 +17,15 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"browseNavigationViewController"]
                             leftDrawerViewController:[storyboard instantiateViewControllerWithIdentifier:@"sidebarNavigationViewController"]];
-    // if (self) {
-    //     [self setLeftSize: 160];
-    // }
+    if (self) {
+        [self setMaximumLeftDrawerWidth: 160];
+        [self setOpenDrawerGestureModeMask: MMOpenDrawerGestureModeBezelPanningCenterView];
+        [self setCloseDrawerGestureModeMask: MMCloseDrawerGestureModePanningCenterView];
+
+        NSLog(@"%d", self.openDrawerGestureModeMask);
+        NSLog(@"%d", self.closeDrawerGestureModeMask);
+        NSLog(@"%d", self.centerHiddenInteractionMode);
+    }
     return self;
 }
 

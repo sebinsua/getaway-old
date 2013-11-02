@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @implementation DetailViewController
 
@@ -14,7 +15,6 @@
 {
     [super viewDidLoad];
 
-    // [self.viewDeckController setPanningMode: IIViewDeckNoPanning];
     [self configureView];
 
     [self layoutForDetailItem];
@@ -58,6 +58,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.mm_drawerController setOpenDrawerGestureModeMask: MMOpenDrawerGestureModeNone];
 
     [UIView animateWithDuration:0.10f animations:^(void) {
         [self.navigationController.navigationBar setTranslucent: TRUE];
@@ -77,7 +78,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    // [self.viewDeckController setPanningMode: IIViewDeckFullViewPanning];
+    [self.mm_drawerController setOpenDrawerGestureModeMask: MMOpenDrawerGestureModeBezelPanningCenterView];
 
     UIColor *lightBlue = [UIColor colorWithRed:40/256.0f
                                          green:183/256.0f

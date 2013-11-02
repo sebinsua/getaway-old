@@ -8,7 +8,7 @@
 
 #import "SidebarListViewController.h"
 #import "MenuCell.h"
-// #import <ViewDeck/IIViewDeckController.h>
+#import "UIViewController+MMDrawerController.h"
 
 @implementation SidebarListViewController
 
@@ -51,9 +51,6 @@
 {
     [self.navigationController setDelegate: self];
 
-    // The line below is in order that clicking on the centre panel does not do weird shit...
-    // [self.viewDeckController setCenterhiddenInteractivity:IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose];
-
     UIColor *lightBlue = [UIColor colorWithRed:40/255.0f
                                          green:183/255.0f
                                           blue:234/255.0f
@@ -85,7 +82,7 @@
 
     if (![self.currentCentreViewControllerName isEqualToString: viewControllerName]) {
         self.currentCentreViewControllerName = viewControllerName;
-        // self.viewDeckController.centerController = [self.storyboard instantiateViewControllerWithIdentifier: viewControllerName];
+        [self.mm_drawerController setCenterViewController: [self.storyboard instantiateViewControllerWithIdentifier: viewControllerName]];
     }
 
     [self hideSidebar];
@@ -118,7 +115,7 @@
 
 - (void)hideSidebar
 {
-    // [self.viewDeckController toggleLeftViewAnimated:YES];
+    [self.mm_drawerController toggleDrawerSide: MMDrawerSideLeft animated: YES completion: nil];
 }
 
 - (IBAction) logout

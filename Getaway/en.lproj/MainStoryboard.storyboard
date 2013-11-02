@@ -118,7 +118,6 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ng2-Md-Q0U"/>
-                        <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="ZR7-pG-FCJ"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="ia5-av-aWR"/>
                 </tableViewController>
@@ -257,7 +256,7 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Getaway" id="36">
                         <barButtonItem key="backBarButtonItem" title="Browse" id="oUc-CT-Zi3"/>
-                        <barButtonItem key="leftBarButtonItem" image="hamburger_menu_icon.png" style="plain" id="rGA-IN-aKs">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger_menu_icon.png" style="plain" id="rGA-IN-aKs" customClass="MMDrawerBarButtonItem">
                             <connections>
                                 <action selector="revealSidebar:" destination="12" id="gbA-jK-H34"/>
                             </connections>
