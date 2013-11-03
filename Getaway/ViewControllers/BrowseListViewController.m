@@ -7,6 +7,7 @@
 //
 
 #import "BrowseListViewController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @implementation BrowseListViewController
 
@@ -85,7 +86,7 @@
 
 - (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
-    [self.viewDeckController toggleLeftViewAnimated:YES];
+    [self.mm_drawerController toggleDrawerSide: MMDrawerSideLeft animated: YES completion: nil];
 }
 
 -(IBAction)love:(UIButton *)sender
@@ -137,11 +138,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Always make sure that the sidebar is not open.
-    if ([self.viewDeckController isSideOpen:IIViewDeckLeftSide]) {
-        [self.viewDeckController toggleLeftViewAnimated:YES];
-    }
-
     if ([[segue identifier] isEqualToString:@"showOverviewSegue"]) {
         [self segueToHolidayWithSegue:segue];
     }

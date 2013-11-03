@@ -7,8 +7,7 @@
 
 
 #import "YourTicketsViewController.h"
-#import "IIViewDeckController.h"
-
+#import "UIViewController+MMDrawerController.h"
 
 @implementation YourTicketsViewController {
 
@@ -16,7 +15,7 @@
 
 - (IBAction)revealSidebar:(UIBarButtonItem *)sender
 {
-    [self.viewDeckController toggleLeftViewAnimated:YES];
+    [self.mm_drawerController toggleDrawerSide: MMDrawerSideLeft animated: YES completion: nil];
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ViewDeck/IIViewDeckController.h>
 #import "UIColor+FlatUI.h"
 #import "PullRefreshTableViewController.h"
 
