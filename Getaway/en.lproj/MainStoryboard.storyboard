@@ -243,7 +243,7 @@
                                     <outlet property="loveButton" destination="Xjv-Ag-xGP" id="rCy-Sb-5tj"/>
                                     <outlet property="priceLabel" destination="aVU-Wv-kcA" id="tPe-rg-nu6"/>
                                     <outlet property="titleLabel" destination="66J-0q-QiT" id="MEo-w5-6YP"/>
-                                    <segue destination="21" kind="push" identifier="showOverviewSegue" id="l6f-um-Ohz"/>
+                                    <segue destination="Ujb-OH-lVJ" kind="push" identifier="showOverviewSegue" id="Gx8-U5-TLg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -268,10 +268,20 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
+        <!--Getaway Page View Controller-->
+        <scene sceneID="h5D-7B-Y4m">
+            <objects>
+                <pageViewController storyboardIdentifier="getawayPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Ujb-OH-lVJ" customClass="GetawayPageViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Uz8-kW-CbE"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZw-oh-aGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="64"/>
+        </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
             <objects>
-                <viewController title="Detail" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="21" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewController" title="Detail" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="21" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="22">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -356,7 +366,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="64"/>
+            <point key="canvasLocation" x="1452" y="70"/>
+        </scene>
+        <!--Getaway Image View Controller-->
+        <scene sceneID="lDk-Lt-EcP">
+            <objects>
+                <viewController id="x3p-hb-dsV" customClass="GetawayImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbe-0A-h5M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgQ-1j-nli" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="671"/>
         </scene>
     </scenes>
     <resources>

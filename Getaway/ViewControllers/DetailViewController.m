@@ -24,24 +24,6 @@
     [self configureScrollMask];
 }
 
-- (void)handleSwipe:(UISwipeGestureRecognizer *)gesture
-{
-    CGRect frame = self.blurredView.frame;
-    if (gesture.direction == UISwipeGestureRecognizerDirectionRight && frame.origin.x == -320) {
-        frame.origin.x += self.view.bounds.size.width;
-        // NSLog(@"%f", frame.origin.x);
-    }
-    else if (gesture.direction == UISwipeGestureRecognizerDirectionLeft && frame.origin.x == 0) {
-        frame.origin.x -= self.view.bounds.size.width;
-        // NSLog(@"%f", frame.origin.x);
-    }
-
-    // Now animate the changing of the frame
-    [UIView animateWithDuration:0.4 animations: ^{
-        self.blurredView.frame = frame;
-    }];
-}
-
 - (void)configureScrollMask
 {
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -144,14 +126,6 @@
     [self.navigationController.toolbar setBarTintColor: [UIColor blackColor]];
     [self.navigationController.toolbar setOpaque:FALSE];
     [self.navigationController.toolbar setTranslucent:TRUE];
-
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:swipeLeft];
-
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:swipeRight];
 }
 
 - (void)layoutForDetailItem

@@ -25,8 +25,10 @@
 		3632D6EB093215980EDE28DF /* berlin_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D8E0418793CAF6A94F08 /* berlin_large.png */; };
 		3632D710744646F73AD4CFA0 /* intro_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D829F4E33AFBC93A8410 /* intro_background@2x.png */; };
 		3632D767E8707FC899CC3AE0 /* SidebarNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632DB9098FFB5CDDB619595 /* SidebarNavigationViewController.m */; };
+		3632D7E6CB1CDD94C6F776B6 /* GetawayPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D03D22D316246BB4F08D /* GetawayPageViewController.m */; };
 		3632D81AEE42210DE798552F /* heart_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632D7F1EE08413A59856454 /* heart_off.png */; };
 		3632D91764B39E3DC817FACD /* SidebarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D9E1108CBD6567085A47 /* SidebarListViewController.m */; };
+		3632D93BD3BCCE8EC4866A0B /* GetawayImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632D926A31F8DBA595895B7 /* GetawayImageViewController.m */; };
 		3632D93D8BF3D1C74BAC00DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3632DE0BBA3285767E8B1D16 /* QuartzCore.framework */; };
 		3632D9C4D488CCAA146C5E81 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3632D79FC0C7E93077CE4E13 /* CoreImage.framework */; };
 		3632DB346DB6B275C2061241 /* heart_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 3632DBEBF039C86BE3D350F5 /* heart_on.png */; };
@@ -77,6 +79,7 @@
 		105091A96E394761BD408588 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		3632D01BF656EDC3CC79380A /* hamburger_menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_menu_icon.png; sourceTree = "<group>"; };
 		3632D036AAC78CEE8489E753 /* BrowseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseListViewController.h; sourceTree = "<group>"; };
+		3632D03D22D316246BB4F08D /* GetawayPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetawayPageViewController.m; sourceTree = "<group>"; };
 		3632D07DA4CF2F08D8BA1151 /* BookButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookButton.h; sourceTree = "<group>"; };
 		3632D095E35D01FACFE9F984 /* YourTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourTicketsViewController.m; sourceTree = "<group>"; };
 		3632D0983D5889D7864F0544 /* YourTicketsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourTicketsNavigationViewController.h; sourceTree = "<group>"; };
@@ -102,14 +105,17 @@
 		3632D7F1EE08413A59856454 /* heart_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_off.png; sourceTree = "<group>"; };
 		3632D829F4E33AFBC93A8410 /* intro_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro_background@2x.png"; sourceTree = "<group>"; };
 		3632D8E0418793CAF6A94F08 /* berlin_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berlin_large.png; sourceTree = "<group>"; };
+		3632D926A31F8DBA595895B7 /* GetawayImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetawayImageViewController.m; sourceTree = "<group>"; };
 		3632D9B1A259F348B8D0E9CA /* paris_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paris_large.png; sourceTree = "<group>"; };
 		3632D9E1108CBD6567085A47 /* SidebarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarListViewController.m; sourceTree = "<group>"; };
+		3632D9F87F66F8F35770D110 /* GetawayPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetawayPageViewController.h; sourceTree = "<group>"; };
 		3632DB3DB66873B03D706D6C /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		3632DB9098FFB5CDDB619595 /* SidebarNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarNavigationViewController.m; sourceTree = "<group>"; };
 		3632DBE79912F51A97B6489D /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		3632DBEBF039C86BE3D350F5 /* heart_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_on.png; sourceTree = "<group>"; };
 		3632DC0121D512F99675AD54 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		3632DC23A4F9B6323563322C /* BookButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookButton.m; sourceTree = "<group>"; };
+		3632DC3E51341E3F26FCC799 /* GetawayImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetawayImageViewController.h; sourceTree = "<group>"; };
 		3632DC4B639F839C7D258322 /* AnimatedDarkenBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedDarkenBackgroundView.h; sourceTree = "<group>"; };
 		3632DCA46BF95FB68354571D /* SidebarNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarNavigationViewController.h; sourceTree = "<group>"; };
 		3632DCBAD6C8D2BA4BDC8D9D /* BrowseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseNavigationViewController.h; sourceTree = "<group>"; };
@@ -225,6 +231,10 @@
 				3632D0983D5889D7864F0544 /* YourTicketsNavigationViewController.h */,
 				3632D095E35D01FACFE9F984 /* YourTicketsViewController.m */,
 				3632D50B38843A7EE2441412 /* YourTicketsViewController.h */,
+				3632D926A31F8DBA595895B7 /* GetawayImageViewController.m */,
+				3632DC3E51341E3F26FCC799 /* GetawayImageViewController.h */,
+				3632D03D22D316246BB4F08D /* GetawayPageViewController.m */,
+				3632D9F87F66F8F35770D110 /* GetawayPageViewController.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -509,6 +519,8 @@
 				3632D00C569039103D90E793 /* YourTicketsViewController.m in Sources */,
 				3632D65CAADF40DF86BBE64B /* AnimatedDarkenBackgroundView.m in Sources */,
 				3632DD063A999A2050F61F10 /* BookButton.m in Sources */,
+				3632D93BD3BCCE8EC4866A0B /* GetawayImageViewController.m in Sources */,
+				3632D7E6CB1CDD94C6F776B6 /* GetawayPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
