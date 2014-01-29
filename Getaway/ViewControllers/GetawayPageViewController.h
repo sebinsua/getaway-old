@@ -4,7 +4,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
-@interface GetawayPageViewController : UIPageViewController
+@interface GetawayPageViewController : UIPageViewController <UIPageViewControllerDataSource>
+
+@property (strong) NSArray *pages;
 
 @end

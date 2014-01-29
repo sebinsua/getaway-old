@@ -7,7 +7,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import "MMDrawerController.h";
+#import "MMDrawerController.h"
 
 @interface InitialViewDeckController : MMDrawerController
 

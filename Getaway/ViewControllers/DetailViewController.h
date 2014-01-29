@@ -29,7 +29,6 @@
 - (void)layoutForDetailItem;
 - (void)configureScrollMask;
 
-- (void)handleSwipe:(UISwipeGestureRecognizer *)gesture;
 - (IBAction) book:(id)sender;
 
 @end

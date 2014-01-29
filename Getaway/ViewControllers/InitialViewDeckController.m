@@ -21,10 +21,6 @@
         [self setMaximumLeftDrawerWidth: 160];
         [self setOpenDrawerGestureModeMask: MMOpenDrawerGestureModeBezelPanningCenterView];
         [self setCloseDrawerGestureModeMask: MMCloseDrawerGestureModePanningCenterView];
-
-        NSLog(@"%d", self.openDrawerGestureModeMask);
-        NSLog(@"%d", self.closeDrawerGestureModeMask);
-        NSLog(@"%d", self.centerHiddenInteractionMode);
     }
     return self;
 }
